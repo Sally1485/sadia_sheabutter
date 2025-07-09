@@ -1,17 +1,16 @@
-import Home from "./assets/Pages/Home";
-import About from "./assets/Pages/About";
-import Notfound from "./assets/Pages/NotFound";
+import Home from './Pages/Home';
+import About from "./Pages/About";
+import Notfound from "./Pages/NotFound";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 
 const SalesRouter = createBrowserRouter([
   {path:'/', element:<Home />},
   {path:'/about', element:<About />},
-  {path:'*', element:<Notfound />}
+  {path:'*', element:<Notfound />},
 ])
 function App() {
-   
-
+  
   return (
     <>
      <RouterProvider router={SalesRouter} />
