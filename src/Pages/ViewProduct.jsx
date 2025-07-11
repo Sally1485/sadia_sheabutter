@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "../components/NavBar";
 import BgImage6 from "../assets/images/bg-6.jpg"
 import { Link } from "react-router";
-import { useRef} from "react";
+import { useRef } from "react";
 import SalesCard from "../components/SalesCard";
 import Footer from "../components/Footer";
 
@@ -17,14 +17,16 @@ export default function ViewProduct() {
       const scrollAmount = 500;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior : "smooth",
+        behavior: "smooth",
       });
     }
   };
 
   return (
     <div>
-      <Navbar />
+     <div className="relative z-10">
+       <Navbar  />
+     </div>
       <section className="pt-28 px-0 w-[80%] mx-auto">
         <span className="flex flex-row items-center cursor-pointer mb-2">
           <ChevronLeft />
@@ -46,14 +48,14 @@ export default function ViewProduct() {
               We’ll have you dreaming about Neem Dream once you’ve tried it!</p>
             <div className="flex flex-col">
               <h2 className="font-medium mb-1">Quantity</h2>
-              <input type="number" defaultValue='1' min='1' className="w-20 rounded px-2 py-1 border border-amber-800 text-center " />
+              <input type="number" defaultValue='1' min='1' className="w-20 rounded px-2 py-1 border border-brown text-center " />
             </div>
             <div className="flex flex-col gap-4">
               <div>
-                <Link><button className="w-full px-6 py-2 border border-amber-400 hover:bg-amber-800 hover:text-white">Add to Cart</button></Link>
+                <Link><button className="w-full px-6 py-2 border border-Green hover:bg-brown text-Green hover:text-white">Add to Cart</button></Link>
               </div>
               <div>
-                <Link><button className=" w-full px-6 py-2 border border-amber-400 hover:bg-amber-800 hover:text-white">Buy Now</button></Link>
+                <Link><button className=" w-full px-6 py-2 border border-Green text-Green hover:bg-brown hover:text-white">Buy Now</button></Link>
               </div>
             </div>
           </div>
@@ -64,46 +66,46 @@ export default function ViewProduct() {
         <div>
           <h1 className="text-3xl font-bold">You May Also Like</h1>
         </div>
-        
-      
+
+
 
         <div className="px-4 py-10 bg-white">
-      <div className="relative">
-        {/* Left Arrow */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-white shadow-md rounded-full z-10 hidden md:block"
-        >
-          <ChevronLeft />
-        </button>
-
-        {/* Scrollable Horizontal Container */}
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-auto gap-6 scrollbar-hide snap-x snap-mandatory scroll-smooth px-8"
-        >
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div
-              key={item}
-              className="snap-center shrink-0 w-[300px] bg-white rounded-xl shadow-md p-4"
+          <div className="relative">
+            {/* Left Arrow */}
+            <button
+              onClick={() => scroll("left")}
+              className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-Green shadow-md rounded-full z-10 hidden md:block"
             >
-              <SalesCard />
-            </div>
-          ))}
-        </div>
+              <ChevronLeft />
+            </button>
 
-        {/* Right Arrow */}
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-white shadow-md rounded-full z-10 hidden md:block"
-        >
-          <ChevronRight />
-        </button>
-      </div>
-    </div>
+            {/* Scrollable Horizontal Container */}
+            <div
+              ref={scrollRef}
+              className="flex overflow-x-auto gap-6 scrollbar-hide snap-x snap-mandatory scroll-smooth px-8"
+            >
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div
+                  key={item}
+                  className="snap-center shrink-0 w-[300px] bg-white rounded-xl shadow-md p-4"
+                >
+                  <SalesCard />
+                </div>
+              ))}
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              onClick={() => scroll("right")}
+              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-Green shadow-md rounded-full z-10 hidden md:block"
+            >
+              <ChevronRight />
+            </button>
+          </div>
+        </div>
       </section>
 
-          <Footer />
+      <Footer />
     </div>
   )
 }

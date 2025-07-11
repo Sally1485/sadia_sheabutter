@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ShoppingBag, User, Search, MenuIcon, XIcon } from "lucide-react";
 import { useState, useEffect } from "react";
+import LogoImage from '../assets/images/logo.png'
 
 
 export default function Navbar() {
@@ -9,15 +10,17 @@ export default function Navbar() {
 
 
     return (
-        <nav className=" flex flex-row justify-around md:p-6 p-4 md:gap-10 fixed top-0 left-0 right-0 bg-amber-700 text-white  ">
+        <nav className=" flex flex-row justify-around md:p-6 p-4 md:gap-10 fixed top-0 left-0 right-0 bg-Green text-white  ">
 
-            <div className="" ><Link to={'#'}>LOGO</Link></div>
+            <div className="" ><Link to={'/'}>
+            <img src={LogoImage} alt="" className="w-16" />
+            </Link></div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex flex-row justify-between gap-10 uppercase">
-                <Link to={'#'}>Home</Link>
+                <Link to={'/'}>Home</Link>
                 <Link to={'#'}>Shop</Link>
-                <Link to={'#'}>Our Story</Link>
+                <Link to={'/about'}>Our Story</Link>
                 <Link to={'#'}>Contact</Link>
             </div>
        

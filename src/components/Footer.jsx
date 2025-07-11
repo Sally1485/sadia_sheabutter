@@ -5,7 +5,7 @@ import { FacebookIcon, InstagramIcon, Twitter } from "lucide-react"
 
 export default function Footer() {
     return (
-        <div className="bg-amber-700 text-white p-10 mt-4">
+        <div className="bg-milk  p-10 mt-4">
             <div className="flex flex-col md:flex-row justify-around gap-8">
                   <div className=" flex flex-col gap-4 ">
                     <h1>Logo</h1>
