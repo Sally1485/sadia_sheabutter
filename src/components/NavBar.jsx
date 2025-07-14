@@ -19,9 +19,9 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <div className="hidden md:flex flex-row justify-between gap-10 uppercase">
                 <Link to={'/'}>Home</Link>
-                <Link to={'#'}>Shop</Link>
+                <Link to={'category'}>Shop</Link>
                 <Link to={'/about'}>Our Story</Link>
-                <Link to={'#'}>Contact</Link>
+                <Link to={'/contact'}>Contact</Link>
             </div>
        
 

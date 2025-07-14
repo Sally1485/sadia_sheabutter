@@ -1,5 +1,5 @@
-import AboutImage from '../assets/images/about-bg.jpeg';
-import About2image from '../assets/images/about2.jpeg';
+import AboutImage from '../assets/images/pro.jpg';
+import About2image from '../assets/images/pro1.jpg';
 import Footer from '../components/Footer';
 import Navbar from '../components/NavBar';
 
@@ -39,21 +39,33 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className='bg-brown pt-8 h-[50vh] md:h-[70vh]'>
-                    <div className=' text-center w-[80%] mx-auto'>
-                    <div>
-                        <h2 className='text-2xl font-black text-white text-center'>Vision</h2>
-                        <p className='text-white text-center pt-2'>To become a leading force in value addition within the agricultural and manufacturing sectors, driving innovation, quality, and impact across the value chain</p>
+                <div className='bg-gradient-to-br from-brown to-Green pt-8 h-[50vh] md:h-[70vh]'>
+
+
+                    <h2 className='text-2xl font-bold text-white text-center'>Our Mission & Vision </h2>
+                    <p className='text-lg  text-white text-center'>Guiding principles that shape our commitment to quality, sustainability and community empowerment</p>
+                    <div className=' flex flex-col  md:flex-row items-center gap-6 w-[80%] mx-auto pt-8'>
+                        <div className='md:w-1/2 bg-white shadow-md p-2'>
+                            <h2 className='text-2xl font-black text-center p-2 '>Our Vision</h2>
+                            <p className=' text-center leading-relaxed p-2'>Our vision is to become a leading force in value addition within the agricultural and manufacturing sectors. We aim to drive innovation through sustainable and efficient practices. Our commitment to quality ensures products that meet both local and international standards. Through our work, we strive to make a meaningful impact across the entire value chain.</p>
+                        </div>
+                        <div className='md:w-1/2 shadow-md bg-white p-2'>
+                            <h2 className='text-2xl font-black text-center p-2 '>Our Mission</h2>
+                            <p className=' text-center leading-relaxed p-2'>Our mission is to contribute meaningfully to national economic development. We aim to create sustainable employment opportunities within agriculture, agro-processing, and manufacturing. A key focus of our efforts is to empower women and persons with disabilities (PWDs). We believe in inclusive practices that foster equal opportunity and long-term impact.</p>
+                        </div>
+
                     </div>
-                    <div className='pt-8 '>
-                        <h2 className='text-2xl font-black text-white'>Mission Statement</h2>
-                        <p className='text-white text-center pt-2'>Our mission is to contribute meaningfully to national economic development by creating sustainable employment opportunities — with a special focus on empowering women and persons with disabilities (PWDs) — through inclusive practices in agriculture, agro-processing, and manufacturing</p>
-                    </div>
-                    
-                    </div>
+
                 </div>
             </section>
-            <Footer/>
+            <section className=' p-8'>
+                <h2 className='text-lg font-bold text-center p-2'>Experience Pure Shea Today</h2>
+                <p className='text-center p-2'>Join thousands of statisfied customers who have discoveres the benefits of our premium shea butter products.</p>
+                <div className=' flex justify-center items-center p-2'>
+                    <button className='px-12 py-2 border border-Green text-Green hover:bg-brown hover:text-white'>Shop products</button>
+                </div>
+            </section>
+            <Footer />
         </div>
     )
 }
