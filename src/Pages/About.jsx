@@ -2,6 +2,8 @@ import AboutImage from '../assets/images/pro.jpg';
 import About2image from '../assets/images/pro1.jpg';
 import Footer from '../components/Footer';
 import Navbar from '../components/NavBar';
+import { Goal, Lightbulb } from 'lucide-react';
+import { Link } from 'react-router';
 
 export default function About() {
     return (
@@ -45,12 +47,18 @@ export default function About() {
                     <h2 className='text-2xl font-bold text-white text-center'>Our Mission & Vision </h2>
                     <p className='text-lg  text-white text-center'>Guiding principles that shape our commitment to quality, sustainability and community empowerment</p>
                     <div className=' flex flex-col  md:flex-row items-center gap-6 w-[80%] mx-auto pt-8'>
-                        <div className='md:w-1/2 bg-white shadow-md p-2'>
-                            <h2 className='text-2xl font-black text-center p-2 '>Our Vision</h2>
+                        <div className='md:w-1/2 bg-white shadow-lg p-2'>
+                            <div className='flex flex-row justify-center items-center gap-2'>
+                                <div><Lightbulb className='size-10 text-Green' /></div>
+                                <h2 className='text-2xl font-black text-center p-2 '>Our Vision</h2>
+                            </div>
                             <p className=' text-center leading-relaxed p-2'>Our vision is to become a leading force in value addition within the agricultural and manufacturing sectors. We aim to drive innovation through sustainable and efficient practices. Our commitment to quality ensures products that meet both local and international standards. Through our work, we strive to make a meaningful impact across the entire value chain.</p>
                         </div>
-                        <div className='md:w-1/2 shadow-md bg-white p-2'>
-                            <h2 className='text-2xl font-black text-center p-2 '>Our Mission</h2>
+                        <div className='md:w-1/2 shadow-lg bg-white p-2'>
+                            <div className='flex flex-row justify-center items-center gap-2 '>
+                                <div><Goal className='size-10 text-Green' /></div>
+                                <h2 className='text-2xl font-black text-center p-2 '>Our Mission</h2>
+                            </div>
                             <p className=' text-center leading-relaxed p-2'>Our mission is to contribute meaningfully to national economic development. We aim to create sustainable employment opportunities within agriculture, agro-processing, and manufacturing. A key focus of our efforts is to empower women and persons with disabilities (PWDs). We believe in inclusive practices that foster equal opportunity and long-term impact.</p>
                         </div>
 
@@ -62,7 +70,7 @@ export default function About() {
                 <h2 className='text-lg font-bold text-center p-2'>Experience Pure Shea Today</h2>
                 <p className='text-center p-2'>Join thousands of statisfied customers who have discoveres the benefits of our premium shea butter products.</p>
                 <div className=' flex justify-center items-center p-2'>
-                    <button className='px-12 py-2 border border-Green text-Green hover:bg-brown hover:text-white'>Shop products</button>
+                   <Link to={'/shop'}><button className='px-12 py-2 border border-Green text-Green hover:bg-brown hover:text-white'>Shop products</button></Link> 
                 </div>
             </section>
             <Footer />
