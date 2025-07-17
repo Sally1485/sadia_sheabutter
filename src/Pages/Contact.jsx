@@ -47,7 +47,8 @@ export default function Contact() {
 
                         <button className="px-12 py-2 border border-green bg-brown text-white rounded">Submit</button>
                     </form>
-                    <div className="w-[45%] bg-[url(./assets/images/nuts.jpg)] bg-cover bg-center  ">
+                    <div className="w-[45%] bg-[url('./assets/images/nuts.jpg')] bg-center bg-fixed bg-cover bg-no-repeat">
+
                         {/* <img src={Contact1Image} alt="" className="w-full h-auto object-cover" /> */}
                     </div>
                 </div>

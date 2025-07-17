@@ -29,7 +29,7 @@ export default function Home() {
     return (
         <div >
             <Navbar />
-            <div className="h-[50vh] md:h-[100vh] bg-cover bg-center transition-all duration-1000 ease-in-out  "
+            <div className="h-[50vh] md:h-[100vh] bg-cover bg-center transition-all duration-1000 ease-in-out bg-fixed  "
                 style={{
                     backgroundImage: `url(${images[currentIndex]})`,
                 }}
