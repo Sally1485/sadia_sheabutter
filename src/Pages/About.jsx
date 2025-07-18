@@ -4,6 +4,10 @@ import Footer from '../components/Footer';
 import Navbar from '../components/NavBar';
 import { Goal, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router';
+import SubmitButton from '../components/SubmitButton';
+
+
+
 
 export default function About() {
     return (
@@ -70,7 +74,7 @@ export default function About() {
                 <h2 className='text-lg font-bold text-center p-2'>Experience Pure Shea Today</h2>
                 <p className='text-center p-2'>Join thousands of statisfied customers who have discoveres the benefits of our premium shea butter products.</p>
                 <div className=' flex justify-center items-center p-2'>
-                   <Link to={'/shop'}><button className='px-12 py-2 border border-Green text-Green hover:bg-brown hover:text-white'>Shop products</button></Link> 
+                   <Link to={'/shop'}><SubmitButton title={"Shop Products"} /></Link> 
                 </div>
             </section>
             <Footer />

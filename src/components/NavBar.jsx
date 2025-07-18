@@ -1,7 +1,8 @@
 import { Link } from "react-router";
 import { ShoppingBag, User, Search, MenuIcon, XIcon } from "lucide-react";
 import { useState, useEffect } from "react";
-import LogoImage from '../assets/images/logo.png'
+import LogoImage from '../assets/images/logo2.png';
+
 
 
 export default function Navbar() {
@@ -11,14 +12,14 @@ export default function Navbar() {
 
     return (
         <div className="relative">
-            <nav className=" flex flex-row justify-around md:p-6 p-4 md:gap-10 fixed top-0 left-0 right-0 bg-Green text-white  shadow-md ">
+            <nav className=" fixed top-0 left-0 right-0 z-50 bg-Green text-white shadow-md flex items-center justify-between px-4 md:px-10 py-2">
 
-                <div className="" ><Link to={'/'}>
-                    <img src={LogoImage} alt="" className="w-16" />
+                <div className="flex items-center" ><Link to={'/'}>
+                    <img src={LogoImage} alt="" className="w-20 h-20 object-cover bg-white rounded-full" />
                 </Link></div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex flex-row justify-between z-10 gap-10 uppercase">
+                <div className="hidden md:flex items-center space-x-8  font-medium uppercase">
                     <Link to={'/'}>Home</Link>
                     <Link to={'/shop'}>Shop</Link>
                     <Link to={'/about'}>Our Story</Link>

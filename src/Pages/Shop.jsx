@@ -6,15 +6,15 @@ import { useState } from "react";
 
 
 const ProductsData = [
-    { id: 1, name: 'Butter',price:'$300', category: 'Raw Shea',  buttonText: 'Add to cart' },
-    { id: 2, name: 'U Hair', price:'$200', category: 'Hair Products',  buttonText: 'Add to cart' },
-    { id: 3, name: 'Lizzy Cream', price:'$100', category: 'Body Products',  buttonText: 'Add to cart' },
-    { id: 4, name: 'plain Shea', price:'$400', category: 'Raw Shea',  buttonText: 'Add to cart' },
-    { id: 5, name: 'Soft Hair', price:'$600', category: 'Hair Products',  buttonText: 'Add to cart' },
-    { id: 6, name: 'Soft Skin', price:'$1600', category: 'Body Products',  buttonText: 'Add to cart' },
-    { id: 7, name: 'Plant Shea', price:'$900', category: 'Raw Shea',  buttonText: 'Add to cart' },
-    { id: 8, name: 'Many Hair', price:'$800', category: 'Hair Products',  buttonText: 'Add to cart' },
-    { id: 9, name: 'Brown Skin', price:'$600', category: 'Body Products',  buttonText: 'Add to cart' },
+    { id: 1, name: 'Butter',price:'$300', category: 'Raw Shea' },
+    { id: 2, name: 'U Hair', price:'$200', category: 'Hair Products' },
+    { id: 3, name: 'Lizzy Cream', price:'$100', category: 'Body Products' },
+    { id: 4, name: 'plain Shea', price:'$400', category: 'Raw Shea' },
+    { id: 5, name: 'Soft Hair', price:'$600', category: 'Hair Products' },
+    { id: 6, name: 'Soft Skin', price:'$1600', category: 'Body Products' },
+    { id: 7, name: 'Plant Shea', price:'$900', category: 'Raw Shea'},
+    { id: 8, name: 'Many Hair', price:'$800', category: 'Hair Products' },
+    { id: 9, name: 'Brown Skin', price:'$600', category: 'Body Products' },
 ]
 
 export default function Shop() {

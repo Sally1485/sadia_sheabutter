@@ -1,5 +1,5 @@
 import { FacebookIcon, InstagramIcon, Twitter } from "lucide-react";
-import LogoImage from '../assets/images/logo.png'
+import LogoImage from '../assets/images/logo2.png'
 
 
 
@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row justify-around gap-8">
                 <div className=" flex flex-col gap-4 ">
                     <div className="w-24">
-                        <img src={LogoImage} alt="" className="w-full h-auto object-cover" />
+                        <img src={LogoImage} alt="" className="w-full h-auto object-cover rounded-full" />
                     </div>
                     <div className="max-w-sm">
                         <p>Naturally crafted in Northern Ghana, our shea butter products nourish and protect skin and hair with rich, organic goodness.

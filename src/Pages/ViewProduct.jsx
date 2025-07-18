@@ -2,9 +2,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "../components/NavBar";
 import BgImage6 from "../assets/images/bg-6.jpg"
 import { Link } from "react-router";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import SalesCard from "../components/SalesCard";
 import Footer from "../components/Footer";
+import ProductImage from '../assets/images/img-1.jpg';
 
 
 
@@ -21,6 +22,13 @@ export default function ViewProduct() {
       });
     }
   };
+
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const OpenModal = () => setIsModalOpen(true);
+    const CloseModal = () => setIsModalOpen(false);
+
+
 
   return (
     <div>
@@ -52,8 +60,40 @@ export default function ViewProduct() {
             </div>
             <div className="flex flex-col gap-4">
               <div>
-                <Link><button className="w-full px-6 py-2 border border-Green hover:bg-brown text-Green hover:text-white">Add to Cart</button></Link>
+                <button className="w-full px-6 py-2 border border-Green hover:bg-brown text-Green hover:text-white" onClick={OpenModal} >Add to Cart</button>
               </div>
+
+              {isModalOpen && (
+                <div  className="fixed inset-0 bg-gradient-to-br from-green-600 to-white bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-50"
+    onClick={CloseModal}>
+
+                  <div  className="bg-white p-8 rounded-2xl shadow-lg max-w-md w-full"
+                    onClick={(e) => e.stopPropagation()} >
+                    
+                    {/* This is  Modal Content */}
+                       <div className="w-[90%] mx-auto flex justify-between">
+                                  <div className="flex flex-row justify-between gap-6">
+                                      <div className='w-1/2'>
+                                          <img src={ProductImage } alt="" className='w-full   md:w-[500px] md:max-h-[500px] object-cover h-auto max-h-[200px]' />
+                                      </div>
+                                      
+                                      <div className="flex flex-col ">
+                                          <h2 className="text-xl font-bold ">Shea Soaps Single Bar</h2>
+                                          <h3 className="pt-2">Ghc 12.00</h3>
+                                           <div className="flex flex-col pt-2">
+                                    <h2 className="font-medium mb-1 pt-2">Quantity</h2>
+                                    <input type="number" defaultValue='1' min='1' className="w-20 rounded px-2 py-1 border border-brown text-center " />
+                                  </div>
+                                          <div>
+                                      <Link><button className="w-full px-6 py-2 border border-Green hover:bg-brown text-Green hover:text-white pt-4">Add to Cart</button></Link>
+                                    </div>
+                                      </div>
+                                  </div>
+                           </div>   
+                  </div>
+                </div>
+                )}
+
               <div>
                 <Link><button className=" w-full px-6 py-2 border border-Green text-Green hover:bg-brown hover:text-white">Buy Now</button></Link>
               </div>

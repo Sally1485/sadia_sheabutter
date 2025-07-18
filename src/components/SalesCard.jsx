@@ -1,6 +1,9 @@
 import SalesImage from '../assets/images/shea.jpg';
+import SubmitButton from './SubmitButton';
+import { Link } from 'react-router';
 
-export default function SalesCard ({name, price,category, buttonText}) {
+
+export default function SalesCard ({name, price,category}) {
     return(
         <div className='flex flex-col items-center shadow-md  w-[250px] h-auto rounded-2xl overflow-hidden p-4 '>
          <div>
@@ -12,7 +15,7 @@ export default function SalesCard ({name, price,category, buttonText}) {
             <p className='font-light text-brown'>{price}</p>
            </div>
             <div className='flex justify-center  pb-6'>
-                <button className='border hover:bg-brown border-Green px-12 py-2 hover:text-white cursor-pointer'>{buttonText}</button>
+            <Link to={'/view-product'}><SubmitButton title={"View Product"}  /></Link>
             </div>
         </div>
     ) 

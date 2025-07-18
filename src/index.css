@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
+
+
 @theme{
     /* colors */
     --color-milk: #FFF2E1;
     --color-brown: #5D3A15;
     --color-Green: #106738
 }
+/* @font-face {
+    font-family: "Bitcount Prop Double";
+    src: url("./fonts/Bitcount_Prop_Double.zip") format('woff2'),;
+} */
