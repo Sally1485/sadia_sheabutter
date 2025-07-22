@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import SalesCard from "../components/SalesCard";
 import Footer from "../components/Footer";
 import ProductImage from '../assets/images/img-1.jpg';
-
+import SubmitButton from "../components/SubmitButton";
 
 
 
@@ -71,7 +71,7 @@ export default function ViewProduct() {
                     onClick={(e) => e.stopPropagation()} >
                     
                     {/* This is  Modal Content */}
-                       <div className="w-[90%] mx-auto flex justify-between">
+                       <div className=" flex justify-between  ">
                                   <div className="flex flex-row justify-between gap-6">
                                       <div className='w-1/2'>
                                           <img src={ProductImage } alt="" className='w-full   md:w-[500px] md:max-h-[500px] object-cover h-auto max-h-[200px]' />
@@ -85,7 +85,7 @@ export default function ViewProduct() {
                                     <input type="number" defaultValue='1' min='1' className="w-20 rounded px-2 py-1 border border-brown text-center " />
                                   </div>
                                           <div>
-                                      <Link><button className="w-full px-6 py-2 border border-Green hover:bg-brown text-Green hover:text-white pt-4">Add to Cart</button></Link>
+                                      <Link><SubmitButton title={"Add to Cart"} /></Link>
                                     </div>
                                       </div>
                                   </div>
@@ -149,3 +149,4 @@ export default function ViewProduct() {
     </div>
   )
 }
+

@@ -10,6 +10,9 @@ import BgImage6 from '../assets/images/img-2.jpg';
 import { Link } from "react-router";
 // import './index.css'
 import SubmitButton from "../components/SubmitButton";
+// Supports weights 400-800
+import '@fontsource/poppins';
+import FilterrButton from "../components/FilterButton";
     
     
     
@@ -44,31 +47,54 @@ export default function Home() {
                 }}
             >
                 <div className="h-full w-full bg-black/40 flex flex-col  items-center justify-center  ">
-                    <h1 className="text-white text-4xl text-center font-bold pt-8 ">Beauty Rooted in Nature</h1>
-                    <p className="italic text-white mt-4 text-lg">Raw. Pure. Powerful. Shea butter for everyday glow</p>
-                    <Link to={'/shop'}> <SubmitButton   title={"Shop Now"}  /> </Link>
+                    <h1 className="text-white text-4xl text-center font-bold pt-8  ">Beauty Rooted in Nature</h1>
+                    <p className="italic text-brown mt-4 text-xl handwritten text-center">Raw. Pure. Powerful. Shea butter for everyday glow</p>
+                    <Link to={'/shop'} className="mt-6"> <SubmitButton  title={"Shop Now"}   /> </Link>
                 </div>
             </div>
-            <section className="pt-12">
-                <div>
-                    <h2 className="text-center text-2xl font-bold">About Us</h2>
-                    <p className="font-light text-center items-center w-[60%] mx-auto pt-8 text-sm/loose">At Khalimatu Sadia Enterprise, our journey with shea butter is deeply personal and rooted in tradition. Founded by Mrs. Sadia Alidu—a physically challenged educator and entrepreneur—inspired by generations of women in agro-processing, the business is dedicated to producing pure, handcrafted shea butter and its by-products. Located in the heart of the Northern Region of Ghana, we transform locally sourced shea nuts into nourishing products like soaps, creams, and pomades. Our mission goes beyond skincare—it's about empowering women and persons with disabilities while honoring the legacy of sustainable shea production</p>
-                    <div className="items-center justify-center flex pt-6">
-                        <Link to={'/about'}> <SubmitButton title={"Read More"} /></Link>
-                    </div>
-                </div>
-            </section>
+          <section className="pt-16 bg-white ">
+  <div className="max-w-4xl mx-auto px-4 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brown">About Us</h2>
+    <p className="text-sm md:text-base font-light leading-relaxed">
+      At <span className="font-semibold">Khalimatu Sadia Enterprise</span>, our journey with shea butter is both personal and rooted in rich tradition. 
+      Founded by <span className="font-semibold">Mrs. Sadia Alidu</span>—a physically challenged educator and entrepreneur—inspired by generations of women in agro-processing, 
+      our business is committed to crafting pure, handcrafted shea butter and its by-products.
+      <br /><br />
+      Based in the heart of the Northern Region of Ghana, we transform locally sourced shea nuts into nourishing soaps, creams, and pomades. 
+      But our mission goes beyond skincare—it's about empowering women and persons with disabilities while honoring a legacy of sustainable shea production.
+    </p>
+    <div className="mt-8">
+      <Link to="/about">
+        <SubmitButton title="Read More" />
+      </Link>
+    </div>
+  </div>
+</section>
+
             <section className="pt-12">
 
-                <h2 className="text-2xl font-bold text-center">Shop Our Favorites</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-center text-brown">Shop Our Favorites</h2>
                 <div className="flex flex-col md:flex-row justify-between md:w-[80%] md:mx-auto gap-10  items-start pt-20">
-                    <div className="md:w-1/2 flex flex-col justify-center items-center pt-15">
-                        <h2 className="text-2xl font-bold">Shea Butter</h2>
-                        <p className=" leading-relaxed md:tracking-widest text-center  text-sm/7 pt-10  ">Shea butter is a natural fat extracted from the nuts of the shea tree, found mainly in West Africa. Rich in vitamins A, E, and F, it is known for its deeply moisturizing and healing properties. For the skin, shea butter helps to soothe dryness, reduce inflammation, fade scars, and improve elasticity, making it ideal for all skin types. When applied to hair, it strengthens strands, reduces breakage, and nourishes the scalp, promoting healthy growth and shine. Its natural richness makes it a trusted remedy for both beauty and wellness.</p>
-                        <div className="pt-8">
-                            <Link to={'/shop'}><SubmitButton title={"Shop Shea Products"} /></Link>
-                        </div>
-                    </div>
+                   <div className="md:w-1/2 flex flex-col items-center justify-center px-4 md:px-8 py-12">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Shea Butter</h2>
+  
+  <p className="text-center text-sm md:text-base leading-relaxed ">
+    Shea butter is a natural fat extracted from the nuts of the shea tree, found primarily in West Africa. 
+    Rich in vitamins A, E, and F, it’s widely known for its deeply moisturizing and healing properties.
+    <br /><br />
+    For skin, shea butter soothes dryness, reduces inflammation, fades scars, and improves elasticity—making it suitable for all skin types. 
+    When applied to hair, it nourishes the scalp, strengthens strands, reduces breakage, and promotes healthy growth and shine. 
+    Its natural richness makes it a trusted remedy for both beauty and wellness.
+  </p>
+
+  <div className="mt-8">
+     {/* Inside the Home component's return */}
+<Link to={`/shop?category=${encodeURIComponent('Raw Shea')}`}>
+  <FilterrButton title="Shop Shea Products"  />
+</Link>
+  </div>
+</div>
+
                     <div className="md:w-1/2">
                         <img src={BgImage6} alt="" className="w-full bg-white shadow-md" />
                     </div>
@@ -79,24 +105,48 @@ export default function Home() {
                     <div className="md:w-1/2">
                         <img src={BgImage6} alt="" className="w-full bg-white shadow-md " />
                     </div>
-                    <div className="md:w-1/2 pt-16">
-                        <h2 className="text-2xl font-bold text-center leading-relaxed">Hair Products</h2>
-                        <p className="text-center leading-relaxed tracking-widest  text-sm/7 pt-10 ">Shea butter is a natural fat extracted from the nuts of the shea tree, found mainly in West Africa. Rich in vitamins A, E, and F, it is known for its deeply moisturizing and healing properties. For the skin, shea butter helps to soothe dryness, reduce inflammation, fade scars, and improve elasticity, making it ideal for all skin types. When applied to hair, it strengthens strands, reduces breakage, and nourishes the scalp, promoting healthy growth and shine. Its natural richness makes it a trusted remedy for both beauty and wellness</p>
-                        <div className="pt-8 flex items-center justify-center">
-                            <Link to={'/shop'}><SubmitButton title={"Shop Hair Products"}/></Link>
-                        </div>
-                    </div>
+                   <div className="md:w-1/2 flex flex-col items-center justify-center px-4 md:px-8 py-12">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Hair Products</h2>
+  
+  <p className="text-center text-sm md:text-base leading-relaxed ">
+    Shea butter is a natural fat extracted from the nuts of the shea tree, found primarily in West Africa. 
+    Rich in vitamins A, E, and F, it’s widely known for its deeply moisturizing and healing properties.
+    <br /><br />
+    For skin, shea butter soothes dryness, reduces inflammation, fades scars, and improves elasticity—making it suitable for all skin types. 
+    When applied to hair, it nourishes the scalp, strengthens strands, reduces breakage, and promotes healthy growth and shine. 
+    Its natural richness makes it a trusted remedy for both beauty and wellness.
+  </p>
+
+  <div className="mt-8">
+    <Link to="/shop">
+      <FilterrButton title="Shop Hair Products"  />
+    </Link>
+  </div>
+</div>
+
 
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between md:w-[80%] md:mx-auto gap-10  items-start pt-20">
-                    <div className="md:w-1/2 flex flex-col justify-center items-center pt-15">
-                        <h2 className="text-2xl font-bold">Body Products</h2>
-                        <p className=" leading-relaxed md:tracking-widest text-center  text-sm/7 pt-10  ">Shea butter is a natural fat extracted from the nuts of the shea tree, found mainly in West Africa. Rich in vitamins A, E, and F, it is known for its deeply moisturizing and healing properties. For the skin, shea butter helps to soothe dryness, reduce inflammation, fade scars, and improve elasticity, making it ideal for all skin types. When applied to hair, it strengthens strands, reduces breakage, and nourishes the scalp, promoting healthy growth and shine. Its natural richness makes it a trusted remedy for both beauty and wellness.</p>
-                        <div className="pt-8">
-                            <Link to={'/shop' }><SubmitButton title={"Shop Body Products"}/></Link>
-                        </div>
-                    </div>
+                    <div className="md:w-1/2 flex flex-col items-center justify-center px-4 md:px-8 py-12">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Skin Products</h2>
+  
+  <p className="text-center text-sm md:text-base leading-relaxed ">
+    Shea butter is a natural fat extracted from the nuts of the shea tree, found primarily in West Africa. 
+    Rich in vitamins A, E, and F, it’s widely known for its deeply moisturizing and healing properties.
+    <br /><br />
+    For skin, shea butter soothes dryness, reduces inflammation, fades scars, and improves elasticity—making it suitable for all skin types. 
+    When applied to hair, it nourishes the scalp, strengthens strands, reduces breakage, and promotes healthy growth and shine. 
+    Its natural richness makes it a trusted remedy for both beauty and wellness.
+  </p>
+
+  <div className="mt-8">
+    <Link to="/shop">
+      <FilterrButton title="Shop Skin Products"  />
+    </Link>
+  </div>
+</div>
+
                     <div className="md:w-1/2">
                         <img src={BgImage6} alt="" className="w-full bg-white shadow-md" />
                     </div>

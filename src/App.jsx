@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import ViewProduct from './Pages/ViewProduct';
 import Shop from './Pages/Shop';
 import Contact from './Pages/Contact';
+import CartPage from './Pages/CartPage';
 
 
 
@@ -14,7 +15,8 @@ const SalesRouter = createBrowserRouter([
   { path: '*', element: <Notfound /> },
   { path: '/view-product', element: <ViewProduct /> },
   { path: '/shop', element: <Shop /> },
-  { path: '/contact', element: <Contact /> }
+  { path: '/contact', element: <Contact /> },
+  {path: '/cart-page', element:<CartPage/>}
 ])
 function App() {
 

@@ -1,7 +1,8 @@
 import { Link } from "react-router";
 import { ShoppingBag, User, Search, MenuIcon, XIcon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import LogoImage from '../assets/images/logo2.png';
+import '@fontsource/poppins';
 
 
 
@@ -19,7 +20,7 @@ export default function Navbar() {
                 </Link></div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8  font-medium uppercase">
+                <div className="hidden md:flex items-center space-x-8 font-medium uppercase">
                     <Link to={'/'}>Home</Link>
                     <Link to={'/shop'}>Shop</Link>
                     <Link to={'/about'}>Our Story</Link>
@@ -43,7 +44,7 @@ export default function Navbar() {
                         <  User />
                         <span>LOG IN</span>
                     </Link>
-                    <Link to={'#'}><ShoppingBag /></Link>
+                    <Link to={'/cart-page'}><ShoppingBag /></Link>
 
                     {/* Hamburger Menu Icon */}
                     <div>
