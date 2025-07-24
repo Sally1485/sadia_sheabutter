@@ -3,11 +3,13 @@ import { ShoppingBag, User, Search, MenuIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import LogoImage from '../assets/images/logo2.png';
 import '@fontsource/poppins';
-
+import CartPage from "../Pages/CartPage";
 
 
 export default function Navbar() {
     const [menuMobileOpen, setmenuMobileOpen] = useState(false);
+
+    const [isOpen, setIsOpen] = useState(false);
 
 
 
@@ -21,10 +23,10 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8 font-medium uppercase">
-                    <Link to={'/'}>Home</Link>
-                    <Link to={'/shop'}>Shop</Link>
-                    <Link to={'/about'}>Our Story</Link>
-                    <Link to={'/contact'}>Contact</Link>
+                    <Link to={'/'} className="hover:text-brown">Home</Link>
+                    <Link to={'/shop'}  className="hover:text-brown">Shop</Link>
+                    <Link to={'/about'}  className="hover:text-brown">Our Story</Link>
+                    <Link to={'/contact'}  className="hover:text-brown">Contact</Link>
                 </div>
 
 
@@ -41,24 +43,25 @@ export default function Navbar() {
 
 
                     <Link to={'#'} className="flex flex-row gap-2">
-                        <  User />
-                        <span>LOG IN</span>
+                        <  User  className="hover:text-brown" />
+                        <span  className="hover:text-brown">LOG IN</span>
                     </Link>
-                    <Link to={'/cart-page'}><ShoppingBag /></Link>
+                    <Link onClick={() => setIsOpen(!isOpen)} className="hover:text-brown"><ShoppingBag /></Link>
+                    {isOpen && <CartPage  />}
 
                     {/* Hamburger Menu Icon */}
                     <div>
-                        <button className="md:hidden outline-none" onClick={() => setmenuMobileOpen(!menuMobileOpen)}>{menuMobileOpen ? <XIcon /> : <MenuIcon />}</button>
+                        <button className="md:hidden outline-none" onClick={() => setmenuMobileOpen(!menuMobileOpen)}>{menuMobileOpen ? <XIcon /> : <MenuIcon  className="hover:text-brown" />}</button>
                     </div>
 
                 </div>
                 {/* Mobile Menu */}
                 {menuMobileOpen && (
                     <div className="md:hidden absolute flex flex-col border border-amber-400 px-6 py-4  top-full bg-Green shadow-md  z-50 text-white justify-between gap-4 w-full uppercase">
-                        <Link to={'#'}>Home</Link>
-                        <Link to={'#'}>Shop</Link>
-                        <Link to={'#'}>Our Story</Link>
-                        <Link to={'#'}>Contact</Link>
+                        <Link to={'#'} className="hover:text-brown">Home</Link>
+                        <Link to={'#'}  className="hover:text-brown">Shop</Link>
+                        <Link to={'#'} className="hover:text-brown">Our Story</Link>
+                        <Link to={'#'} className="hover:text-brown">Contact</Link>
                     </div>
                 )}
             </nav>

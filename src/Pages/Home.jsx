@@ -90,6 +90,7 @@ export default function Home() {
   <div className="mt-8">
      {/* Inside the Home component's return */}
 <Link to={`/shop?category=${encodeURIComponent('Raw Shea')}`}>
+
   <FilterrButton title="Shop Shea Products"  />
 </Link>
   </div>
@@ -118,7 +119,8 @@ export default function Home() {
   </p>
 
   <div className="mt-8">
-    <Link to="/shop">
+   <Link to={"/shop?category=encodeURIComponent('Hair Products')"}>
+
       <FilterrButton title="Shop Hair Products"  />
     </Link>
   </div>
@@ -141,7 +143,8 @@ export default function Home() {
   </p>
 
   <div className="mt-8">
-    <Link to="/shop">
+   <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
+
       <FilterrButton title="Shop Skin Products"  />
     </Link>
   </div>

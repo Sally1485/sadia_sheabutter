@@ -3,6 +3,7 @@ import Navbar from "../components/NavBar";
 import Sidebar from "../components/Sidebar";
 import SalesCard from "../components/SalesCard";
 import { useState } from "react";
+import '@fontsource/poppins';
 
 
 const ProductsData = [
@@ -33,7 +34,7 @@ export default function Shop() {
             <Navbar />
             <div className="flex flex-col md:flex-row gap-6">
                 <Sidebar onCategoryChange={HandleCategorychange} />
-                <section className="mt-30 flex-1 bg-white rounded-lg shadow-md p-6">
+                <section className="mt-60 flex-1 bg-white rounded-lg shadow-md p-6">
                     <div className="">
                         <h1 className="text-2xl font-bold">All Products</h1>
                         <div className="flex justify-between m-4">

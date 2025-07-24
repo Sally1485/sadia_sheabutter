@@ -40,7 +40,7 @@ export default function Contact() {
             <section className="mt-8  ">
                 <h1 className="text-4xl font-bold text-center p-4">Get In Touch</h1>
                 <div className=" w-[80%] mx-auto pt-4  h-[648px]   flex flex-row justify-around  ">
-                    <form action="" className="w-[45%] flex flex-col items-center gap-8  pt-8">
+                    <form action="https://formspree.io/f/mvgqkjqo" method="POST" className="w-[45%] flex flex-col items-center gap-8  pt-8">
                         <input type="text" name="name" id="name" placeholder=" Enter Full Name" className="w-96 px-4 py-2 border border-Green" />
                         <input type="email" name="email" id="email" placeholder="Enter Email" className="w-96 px-4 py-2 border border-Green" />
                         <input type="tel" name="number" id="number" placeholder="Enter Phone Number" className="w-96 px-4 py-2 border border-Green" />

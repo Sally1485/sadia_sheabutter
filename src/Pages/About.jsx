@@ -19,7 +19,7 @@ export default function About() {
                 </div>
             </div>
             <section>
-                <div className='bg-Green'>
+                <div className=''>
                     <h2 className="text-2xl md:text-4xl font-bold text-center text-white ">Our Story</h2>
                     <div className='flex flex-col md:flex-row w-[80%] mx-auto justify-between pt-8 '>
                         <div className='md:w-1/2'>
@@ -32,7 +32,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className='bg-milk flex md:flex-row '>
+                <div className=' flex md:flex-row '>
                     <div className='flex flex-col md:flex-row justify-between md:gap-20 w-[80%] pt-10 mx-auto '>
                         <div className='md:w-1/2'>
                             <h2 className='text-xl md:text-3xl text-center font-black'>The Woman Behind the Vision</h2>
@@ -45,7 +45,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className='bg-gradient-to-br from-brown to-Green pt-8 h-[50vh] md:h-[70vh]'>
+                <div className=' pt-8 h-[50vh] md:h-[70vh]'>
 
 
                     <h2 className='text-2xl font-bold text-white text-center'>Our Mission & Vision </h2>
