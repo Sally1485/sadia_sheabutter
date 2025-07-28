@@ -38,7 +38,7 @@ export default function ViewProduct() {
       <section className="pt-28 px-0 w-[80%] mx-auto">
         <span className="flex flex-row items-center cursor-pointer mb-2">
           <ChevronLeft />
-          <h1 className="text-lg font-medium">Back</h1>
+          <Link to={'/shop'} className="text-lg font-medium">Back</Link>
         </span>
         {/* Main Content */}
         <div className="flex flex-col md:flex-row justify-between  md:gap-10">

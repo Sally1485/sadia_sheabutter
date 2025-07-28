@@ -5,9 +5,9 @@ import { Link } from 'react-router';
 
 export default function SalesCard ({name, price,category}) {
     return(
-        <div className='flex flex-col items-center shadow-md  w-[250px] h-auto rounded-2xl overflow-hidden p-4 '>
+        <div className='flex flex-col items-center w-[250px] shadow-md  h-auto overflow-hidden p-4 '>
          <div>
-               <img src={SalesImage} alt="" className='w-full   rounded-full' />
+               <img src={SalesImage} alt="" className='w-full  rounded-full' />
          </div>
            <div className='flex gap-4 flex-col items-center  justify-between p-4'>
              <h2 className='text-xl font-bold text-Green'>{name}</h2>

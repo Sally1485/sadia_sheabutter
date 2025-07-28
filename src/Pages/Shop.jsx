@@ -4,6 +4,8 @@ import Sidebar from "../components/Sidebar";
 import SalesCard from "../components/SalesCard";
 import { useState } from "react";
 import '@fontsource/poppins';
+import { ChevronRight } from "lucide-react";
+import { Link } from "react-router";
 
 
 const ProductsData = [
@@ -32,31 +34,40 @@ export default function Shop() {
     return (
         <div>
             <Navbar />
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="mt-40 flex items-center w-[90%] mx-auto gap-2 font-light">
+              <Link to={'/'} className="font-light">Home</Link>
+                <div><ChevronRight /></div>
+                <div className="font-light">{SelectCategory }</div>
+
+            </div>
+            <div className="flex flex-col md:flex-row gap-6 w-[90%] mx-auto">
                 <Sidebar onCategoryChange={HandleCategorychange} />
-                <section className="mt-60 flex-1 bg-white rounded-lg shadow-md p-6">
-                    <div className="">
-                        <h1 className="text-2xl font-bold">All Products</h1>
-                        <div className="flex justify-between m-4">
-                            <span className="text-sm">13 products</span>
-                            <select name="recommendation"
+                <section className="mt-5 flex-1  rounded-lg  p-6">
+                    <div className="pl-6">
+                        <h1 className="text-2xl md:text-4xl font-medium ">{SelectCategory }</h1>
+                        <div className="flex justify-between m-4 pt-14">
+                            <div>
+                                <h1>{FilteredProducts.length } products</h1>
+                           </div>
+                            <div className="flex items-center gap-2">
+                                <label htmlFor="label-items">Sort by:</label>
+                                 <select name="recommendation"
                                 id="recommendation"
-                                className="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600">
-                                <option value="1">cream</option>
-                                <option value="2">Soap</option>
-                                <option value="3">Sidebar</option>
+                                className="px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="1">Recommended</option>
+                                <option value="2">Newest</option>
+                                <option value="3">Price(low to high)</option>
+                                <option value="4">Price(high to low)</option>
+                                <option value="5">Name A-Z</option>
+                                <option value="6">Name Z-A</option>
+                            
                             </select>
+                           </div>
                         </div>
 
                         {/* select Category */}
-                        <div >
-
-                        </div>
-
-
-
-
-                        <div className="grid grid-cols-4">
+                    
+                        <div className="grid grid-cols-4 pt-16">
                             {FilteredProducts.map(product => {
                                 return (
                                     <SalesCard key={product.id} name={product.name} category={product.category} price={product.price} buttonText={product.buttonText} />
