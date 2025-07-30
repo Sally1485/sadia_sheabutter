@@ -6,6 +6,8 @@ import ViewProduct from './Pages/ViewProduct';
 import Shop from './Pages/Shop';
 import Contact from './Pages/Contact';
 import CartPage from './Pages/CartPage';
+import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
 
 
 
@@ -16,7 +18,9 @@ const SalesRouter = createBrowserRouter([
   { path: '/view-product', element: <ViewProduct /> },
   { path: '/shop', element: <Shop /> },
   { path: '/contact', element: <Contact /> },
-  {path: '/cart-page', element:<CartPage/>}
+  { path: '/cart-page', element: <CartPage /> },
+  { path: '/login', element: <Login /> },
+  {path: '/sign-up', element: <SignUp />}
 ])
 function App() {
 

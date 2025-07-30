@@ -9,32 +9,32 @@ import { Link } from "react-router";
 
 
 const ProductsData = [
-    { id: 1, name: 'Butter',price:'$300', category: 'Raw Shea' },
+    { id: 1, name: 'Butter',price:'$300', category: 'Shea Products' },
     { id: 2, name: 'U Hair', price:'$200', category: 'Hair Products' },
     { id: 3, name: 'Lizzy Cream', price:'$100', category: 'Body Products' },
-    { id: 4, name: 'plain Shea', price:'$400', category: 'Raw Shea' },
+    { id: 4, name: 'plain Shea', price:'$400', category: 'Shea Products' },
     { id: 5, name: 'Soft Hair', price:'$600', category: 'Hair Products' },
     { id: 6, name: 'Soft Skin', price:'$1600', category: 'Body Products' },
-    { id: 7, name: 'Plant Shea', price:'$900', category: 'Raw Shea'},
+    { id: 7, name: 'Plant Shea', price:'$900', category: 'Shea Products'},
     { id: 8, name: 'Many Hair', price:'$800', category: 'Hair Products' },
     { id: 9, name: 'Brown Skin', price:'$600', category: 'Body Products' },
 ]
 
 export default function Shop() {
-        const [SelectCategory, SetSelectCategory] = useState('All');
+        const [SelectCategory, SetSelectCategory] = useState('All Products');
 
         const HandleCategorychange = (category) => {
            SetSelectCategory(category); 
         };
 
-        const FilteredProducts = SelectCategory ==='All' ? ProductsData : ProductsData.filter(product => product.category === SelectCategory);
+        const FilteredProducts = SelectCategory ==='All Products' ? ProductsData : ProductsData.filter(product => product.category === SelectCategory);
 
 
 
     return (
         <div>
             <Navbar />
-            <div className="mt-40 flex items-center w-[90%] mx-auto gap-2 font-light">
+            <div className="mt-40 md:mr-12 flex items-center w-[90%] mx-auto  font-light">
               <Link to={'/'} className="font-light">Home</Link>
                 <div><ChevronRight /></div>
                 <div className="font-light">{SelectCategory }</div>
@@ -42,8 +42,8 @@ export default function Shop() {
             </div>
             <div className="flex flex-col md:flex-row gap-6 w-[90%] mx-auto">
                 <Sidebar onCategoryChange={HandleCategorychange} />
-                <section className="mt-5 flex-1  rounded-lg  p-6">
-                    <div className="pl-6">
+                <section className="mt-5 flex-1  rounded-lg ">
+                    <div className="">
                         <h1 className="text-2xl md:text-4xl font-medium ">{SelectCategory }</h1>
                         <div className="flex justify-between m-4 pt-14">
                             <div>

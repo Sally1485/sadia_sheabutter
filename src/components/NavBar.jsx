@@ -42,12 +42,14 @@ export default function Navbar() {
                 <div className="flex flex-row justify-between gap-4 md:gap-10 ">
 
 
-                    <Link to={'#'} className="flex flex-row gap-2">
+                    <div className="flex flex-row gap-2">
+                        <Link to={'/sign-up'} >
                         <  User  className="hover:text-brown" />
-                        <span  className="hover:text-brown">LOG IN</span>
-                    </Link>
+                        </Link>
+                        <Link to={'/login'}> <span  className="hover:text-brown">LOG IN</span></Link>
+                    </div>
                     <Link onClick={() => setIsOpen(!isOpen)} className="hover:text-brown"><ShoppingBag /></Link>
-                    {isOpen && <CartPage  />}
+                   
 
                     {/* Hamburger Menu Icon */}
                     <div>
@@ -58,13 +60,18 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 {menuMobileOpen && (
                     <div className="md:hidden absolute flex flex-col border border-amber-400 px-6 py-4  top-full bg-Green shadow-md  z-50 text-white justify-between gap-4 w-full uppercase">
-                        <Link to={'#'} className="hover:text-brown">Home</Link>
-                        <Link to={'#'}  className="hover:text-brown">Shop</Link>
-                        <Link to={'#'} className="hover:text-brown">Our Story</Link>
-                        <Link to={'#'} className="hover:text-brown">Contact</Link>
+                        <Link to={'/'} className="hover:text-brown">Home</Link>
+                        <Link to={'/shop'}  className="hover:text-brown">Shop</Link>
+                        <Link to={'/about'} className="hover:text-brown">Our Story</Link>
+                        <Link to={'/contact'} className="hover:text-brown">Contact</Link>
                     </div>
                 )}
             </nav>
+            {isOpen && (
+                <div className=" fixed top-20 right-10 z-40  p-4 w-80 h-auto">
+                     <CartPage  />
+                </div>
+             )}
         </div>
     )
 }
