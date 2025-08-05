@@ -5,8 +5,8 @@ import Navbar from '../components/NavBar';
 import { Goal, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router';
 import SubmitButton from '../components/SubmitButton';
-import AboutBg1 from '../assets/images/img10.jpg';
-import AboutBg2 from '../assets/images/img5.jpg'
+import AboutBg1 from '../assets/images/img11.jpg';
+import AboutBg2 from '../assets/images/img12.jpg'
 import { useEffect, useState } from 'react';
 
 
@@ -31,7 +31,7 @@ export default function About() {
     return (
         <div>
             <Navbar />
-            <div className="relative w-full  bg-center bg-cover h-[50vh] md:h-[100vh] transition-all duration-1000 ease-in-out bg-fixed "
+            <div className="relative w-full  bg-center bg-cover h-[70vh] md:h-[100vh] transition-all duration-1000 ease-in-out bg-fixed "
             style={{
                     backgroundImage: `url(${images[currentIndex]})`,
                 }}>
