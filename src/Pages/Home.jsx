@@ -41,14 +41,14 @@ export default function Home() {
       This text uses the custom font.
     </div> */}
             <Navbar />
-            <div className="h-[50vh] md:h-[100vh] bg-cover bg-center transition-all duration-1000 ease-in-out bg-fixed  "
+            <div className="h-[70vh] md:h-[100vh] bg-cover bg-center transition-all duration-1000 ease-in-out bg-fixed  "
                 style={{
                     backgroundImage: `url(${images[currentIndex]})`,
                 }}
             >
                 <div className="h-full w-full bg-black/40 flex flex-col  items-center justify-center  ">
-                    <h1 className="text-white text-4xl text-center font-bold pt-8  ">Beauty Rooted in Nature</h1>
-                    <p className="italic text-brown mt-4 text-xl handwritten text-center">Raw. Pure. Powerful. Shea butter for everyday glow</p>
+                    <h1 className="text-white text-3xl md:text-4xl text-center font-bold pt-20 md:pt-8  ">Beauty Rooted in Nature</h1>
+                    <p className="italic text-brown text-center mt-4 text-sm md:text-xl handwritten ">Raw. Pure. Powerful. Shea butter for everyday glow</p>
                     <Link to={'/shop'} className="mt-6"> <SubmitButton  title={"Shop Now"}   /> </Link>
                 </div>
             </div>
@@ -97,7 +97,7 @@ export default function Home() {
 </div>
 
                     <div className="md:w-1/2">
-                        <img src={BgImage6} alt="" className="w-full bg-white shadow-md" />
+                        <img src={BgImage6} alt="" className="w-full bg-white shadow-md " />
                     </div>
 
                 </div>

@@ -6,18 +6,19 @@ import { useState } from "react";
 import '@fontsource/poppins';
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
+import TestImage from '../assets/images/shea.jpg'
 
 
 const ProductsData = [
-    { id: 1, name: 'Butter',price:'$300', category: 'Shea Products' },
-    { id: 2, name: 'U Hair', price:'$200', category: 'Hair Products' },
-    { id: 3, name: 'Lizzy Cream', price:'$100', category: 'Body Products' },
-    { id: 4, name: 'plain Shea', price:'$400', category: 'Shea Products' },
-    { id: 5, name: 'Soft Hair', price:'$600', category: 'Hair Products' },
-    { id: 6, name: 'Soft Skin', price:'$1600', category: 'Body Products' },
-    { id: 7, name: 'Plant Shea', price:'$900', category: 'Shea Products'},
-    { id: 8, name: 'Many Hair', price:'$800', category: 'Hair Products' },
-    { id: 9, name: 'Brown Skin', price:'$600', category: 'Body Products' },
+    { id: 1, name: 'Butter',price:'$300', category: 'Shea Products', image: TestImage  },
+    { id: 2, name: 'U Hair', price:'$200', category: 'Hair Products',image: TestImage  },
+    { id: 3, name: 'Lizzy Cream', price:'$100', category: 'Body Products', image: TestImage },
+    { id: 4, name: 'plain Shea', price:'$400', category: 'Shea Products', image: TestImage },
+    { id: 5, name: 'Soft Hair', price:'$600', category: 'Hair Products',image: TestImage },
+    { id: 6, name: 'Soft Skin', price:'$1600', category: 'Body Products', image: TestImage },
+    { id: 7, name: 'Plant Shea', price:'$900', category: 'Shea Products',image: TestImage },
+    { id: 8, name: 'Many Hair', price:'$800', category: 'Hair Products', image: TestImage },
+    { id: 9, name: 'Brown Skin', price:'$600', category: 'Body Products',image: TestImage },
 ]
 
 export default function Shop() {
@@ -42,12 +43,12 @@ export default function Shop() {
             </div>
             <div className="flex flex-col md:flex-row gap-6 w-[90%] mx-auto">
                 <Sidebar onCategoryChange={HandleCategorychange} />
-                <section className="mt-5 flex-1  rounded-lg ">
+                <section className="md:mt-10  flex-1  rounded-lg ">
                     <div className="">
                         <h1 className="text-2xl md:text-4xl font-medium ">{SelectCategory }</h1>
-                        <div className="flex justify-between m-4 pt-14">
+                        <div className="flex flex-col md:flex-row justify-between gap-6  m-4 pt-4 md:pt-6">
                             <div>
-                                <h1>{FilteredProducts.length } products</h1>
+                                <h1>{FilteredProducts.length } products </h1>
                            </div>
                             <div className="flex items-center gap-2">
                                 <label htmlFor="label-items">Sort by:</label>
@@ -67,10 +68,10 @@ export default function Shop() {
 
                         {/* select Category */}
                     
-                        <div className="grid grid-cols-4 pt-16">
+                        <div className="grid  md:grid-cols-4 pt-8">
                             {FilteredProducts.map(product => {
                                 return (
-                                    <SalesCard key={product.id} name={product.name} category={product.category} price={product.price} buttonText={product.buttonText} />
+                                    <SalesCard key={product.id} salesImage={product.image} name={product.name} category={product.category} price={product.price} buttonText={product.buttonText} />
                                 )
                             })}
                         </div>

@@ -17,9 +17,9 @@ export default function Footer() {
                         </p>
                     </div>
                     <div className="flex items-center gap-2 ">
-                        <span><FacebookIcon/></span>
-                        <span><InstagramIcon/></span>
-                        <span><Twitter /></span>
+                        <a href="#"><span><FacebookIcon/></span></a>
+                       <a href="#"> <span><InstagramIcon/></span></a>
+                        <a href="#"><span><Twitter /></span></a>
                     </div>
                 </div>
                 <div className="flex flex-col  gap-4">
