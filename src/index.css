@@ -13,8 +13,12 @@
     src: url("./fonts/Bitcount_Prop_Double.zip") format('woff2'),;
 } */
 
-body {
+/* body {
   font-family: 'Poppins', sans-serif;
+} */
+
+body {
+  font-family: 'Source Sans 3 Variable', sans-serif;
 }
 
 /* index.css or App.css */

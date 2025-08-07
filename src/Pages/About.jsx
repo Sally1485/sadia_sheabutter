@@ -8,6 +8,7 @@ import SubmitButton from '../components/SubmitButton';
 import AboutBg1 from '../assets/images/img11.jpg';
 import AboutBg2 from '../assets/images/img12.jpg'
 import { useEffect, useState } from 'react';
+import '@fontsource/poppins';
 
 
 

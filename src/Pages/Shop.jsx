@@ -10,13 +10,13 @@ import TestImage from '../assets/images/shea.jpg'
 
 
 const ProductsData = [
-    { id: 1, name: 'Butter',price:'$300', category: 'Shea Products', image: TestImage  },
+    { id: 1, name: 'Butter',price:'$300', category: 'Soap Products', image: TestImage  },
     { id: 2, name: 'U Hair', price:'$200', category: 'Hair Products',image: TestImage  },
     { id: 3, name: 'Lizzy Cream', price:'$100', category: 'Body Products', image: TestImage },
-    { id: 4, name: 'plain Shea', price:'$400', category: 'Shea Products', image: TestImage },
+    { id: 4, name: 'plain Shea', price:'$400', category: 'Soap Products', image: TestImage },
     { id: 5, name: 'Soft Hair', price:'$600', category: 'Hair Products',image: TestImage },
     { id: 6, name: 'Soft Skin', price:'$1600', category: 'Body Products', image: TestImage },
-    { id: 7, name: 'Plant Shea', price:'$900', category: 'Shea Products',image: TestImage },
+    { id: 7, name: 'Plant Shea', price:'$900', category: 'Soap Products',image: TestImage },
     { id: 8, name: 'Many Hair', price:'$800', category: 'Hair Products', image: TestImage },
     { id: 9, name: 'Brown Skin', price:'$600', category: 'Body Products',image: TestImage },
 ]

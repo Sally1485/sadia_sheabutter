@@ -25,24 +25,24 @@ export default function Footer() {
                 <div className="flex flex-col  gap-4">
 
                     <h1 className="font-bold text-lg">Product</h1>
-                    <h2>Features</h2>
-                    <h2>Pricing</h2>
-                    <h2>API</h2>
+                    <h2 className="hover:text-brown">Features</h2>
+                    <h2 className="hover:text-brown">Pricing</h2>
+                    <h2 className="hover:text-brown">API</h2>
 
                 </div>
                 <div className="flex flex-col justify-between gap-4">
                     <h1 className="font-bold text-lg">About Us</h1>
-                    <h2>Our Story</h2>
-                    <h2>Our Team</h2>
-                    <h2>Our Values</h2>
-                    <h2>Our Ingredients</h2>
-                    <h2>Contacts us</h2>
+                    <h2 className="hover:text-brown">Our Story</h2>
+                    <h2 className="hover:text-brown">Our Team</h2>
+                    <h2 className="hover:text-brown">Our Values</h2>
+                    <h2 className="hover:text-brown">Our Ingredients</h2>
+                    <h2 className="hover:text-brown">Contacts us</h2>
                 </div>
                 <div className="flex flex-col gap-4">
                     <h1 className="font-bold text-lg">Support</h1>
-                    <h2>Help Center</h2>
-                    <h2>Contact</h2>
-                    <h2>Privacy</h2>
+                    <h2 className="hover:text-brown">Help Center</h2>
+                    <h2 className="hover:text-brown">Contact</h2>
+                    <h2 className="hover:text-brown">Privacy</h2>
 
                 </div>
 

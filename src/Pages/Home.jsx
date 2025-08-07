@@ -6,12 +6,15 @@ import BgImage1 from '../assets/images/bg-1.jpg';
 import BgImage2 from '../assets/images/bg-2.jpg';
 import BgImage3 from '../assets/images/bg-3.jpg';
 import BgImage4 from '../assets/images/bg-4.jpg';
-import BgImage6 from '../assets/images/img-2.jpg';
+import BgImage6 from '../assets/images/shea-hair.jpg';
+import BgImage7 from '../assets/images/skin-shea.jpg';
+import BgImage8 from '../assets/images/shea-soap.jpg';
 import { Link } from "react-router";
 // import './index.css'
 import SubmitButton from "../components/SubmitButton";
 // Supports weights 400-800
-import '@fontsource/poppins';
+// Supports weights 200-900
+import '@fontsource-variable/source-sans-3';
 import FilterrButton from "../components/FilterButton";
     
     
@@ -55,9 +58,9 @@ export default function Home() {
           <section className="pt-16 bg-white ">
   <div className="max-w-4xl mx-auto px-4 text-center">
     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brown">About Us</h2>
-    <p className="text-sm md:text-base font-light leading-relaxed">
-      At <span className="font-semibold">Khalimatu Sadia Enterprise</span>, our journey with shea butter is both personal and rooted in rich tradition. 
-      Founded by <span className="font-semibold">Mrs. Sadia Alidu</span>—a physically challenged educator and entrepreneur—inspired by generations of women in agro-processing, 
+    <p className="text-sm md:text-base  leading-relaxed">
+      At <span className="font-bold">Khalimatu Sadia Enterprise</span>, our journey with shea butter is both personal and rooted in rich tradition. 
+      Founded by <span className="font-bold">Mrs. Sadia Alidu</span>—a physically challenged educator and entrepreneur—inspired by generations of women in agro-processing, 
       our business is committed to crafting pure, handcrafted shea butter and its by-products.
       <br /><br />
       Based in the heart of the Northern Region of Ghana, we transform locally sourced shea nuts into nourishing soaps, creams, and pomades. 
@@ -74,9 +77,9 @@ export default function Home() {
             <section className="pt-12">
 
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-brown">Shop Our Favorites</h2>
-                <div className="flex flex-col md:flex-row justify-between md:w-[80%] md:mx-auto gap-10  items-start pt-20">
-                   <div className="md:w-1/2 flex flex-col items-center justify-center px-4 md:px-8 py-12">
-  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Shea Butter</h2>
+                <div className="flex flex-col md:flex-row justify-between md:w-[80%] md:mx-auto md:gap-10  items-start md:pt-20">
+                   <div className="md:w-1/2 flex flex-col md:items-center md:justify-center px-4 md:px-8 py-12">
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Soap Products</h2>
   
   <p className="text-center text-sm md:text-base leading-relaxed ">
     Shea butter is a natural fat extracted from the nuts of the shea tree, found primarily in West Africa. 
@@ -87,27 +90,35 @@ export default function Home() {
     Its natural richness makes it a trusted remedy for both beauty and wellness.
   </p>
 
-  <div className="mt-8">
+  <div className="md:mt-8">
      {/* Inside the Home component's return */}
-<Link to={`/shop?category=${encodeURIComponent('Raw Shea')}`}>
+<Link to={`/shop?category=${encodeURIComponent('Soap Products')}`}>
 
-  <FilterrButton title="Shop Shea Products"  />
+  <FilterrButton title="Shop Soap Products" className={'hidden md:flex'}  />
 </Link>
   </div>
 </div>
 
                     <div className="md:w-1/2">
-                        <img src={BgImage6} alt="" className="w-full bg-white shadow-md " />
-                    </div>
+                        <img src={BgImage8} alt="" className="w-full bg-white shadow-md " />
+            </div>
+           <div className="md:mt-8">
+     {/* Inside the Home component's return */}
+<Link to={`/shop?category=${encodeURIComponent('Raw Shea')}`}>
+
+  <FilterrButton title="Shop Shea Products" className={'md:hidden ml-6 '}  />
+</Link>
+  </div>
 
                 </div>
 
-                <div className="flex flex-col  md:flex-row justify-between w-[80%] mx-auto gap-10 items-start pt-20">
-                    <div className="md:w-1/2">
-                        <img src={BgImage6} alt="" className="w-full bg-white shadow-md " />
+          <div className="flex flex-col  md:flex-row justify-between md:w-[80%] mx-auto gap-4 md:gap-10 items-start pt-20">
+            <h2 className="md:hidden  text-3xl md:text-4xl font-bold text-center ml-8 ">Hair Products</h2>
+                    <div className="md:w-2/5">
+                        <img src={BgImage6} alt="" className="w-84 bg-white shadow-md " />
                     </div>
-                   <div className="md:w-1/2 flex flex-col items-center justify-center px-4 md:px-8 py-12">
-  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Hair Products</h2>
+                   <div className="md:w-3/5 flex flex-col md:items-center md:justify-center px-4 md:px-8 py-12">
+  <h2 className="hidden md:flex text-3xl md:text-4xl font-bold text-center mb-6">Hair Products</h2>
   
   <p className="text-center text-sm md:text-base leading-relaxed ">
     Shea butter is a natural fat extracted from the nuts of the shea tree, found primarily in West Africa. 
@@ -118,7 +129,7 @@ export default function Home() {
     Its natural richness makes it a trusted remedy for both beauty and wellness.
   </p>
 
-  <div className="mt-8">
+  <div className="md:mt-8">
    <Link to={"/shop?category=encodeURIComponent('Hair Products')"}>
 
       <FilterrButton title="Shop Hair Products"  />
@@ -129,7 +140,7 @@ export default function Home() {
 
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between md:w-[80%] md:mx-auto gap-10  items-start pt-20">
+                <div className="flex flex-col md:flex-row justify-between md:w-[80%] md:mx-auto md:gap-10  items-start  md:pt-20">
                     <div className="md:w-1/2 flex flex-col items-center justify-center px-4 md:px-8 py-12">
   <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Skin Products</h2>
   
@@ -142,17 +153,24 @@ export default function Home() {
     Its natural richness makes it a trusted remedy for both beauty and wellness.
   </p>
 
-  <div className="mt-8">
+  <div className="md:mt-8">
    <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
 
-      <FilterrButton title="Shop Skin Products"  />
+      <FilterrButton title="Shop Skin Products" className={'hidden md:flex'} />
     </Link>
   </div>
 </div>
 
                     <div className="md:w-1/2">
-                        <img src={BgImage6} alt="" className="w-full bg-white shadow-md" />
-                    </div>
+                        <img src={BgImage7} alt="" className="w-full bg-white shadow-md" />
+            </div>
+            
+             <div className="md:mt-8">
+   <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
+
+      <FilterrButton title="Shop Skin Products" className={'md:hidden ml-6'} />
+    </Link>
+  </div>
 
                 </div>
 

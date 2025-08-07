@@ -1,12 +1,12 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "../components/NavBar";
 import BgImage6 from "../assets/images/bg-6.jpg";
-import { Link } from "react-router"; // Use react-router-dom for Link
+import { Link } from "react-router"; 
 import { useRef, useState } from "react";
 import SalesCard from "../components/SalesCard";
 import Footer from "../components/Footer";
-// Assuming you have a specific product to display.
-// This is a static example. In a real app, this would come from a prop or an API call.
+import '@fontsource/poppins';
+
 const productData = {
   id: 1,
   name: "Shea Butter",

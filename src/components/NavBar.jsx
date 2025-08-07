@@ -15,11 +15,12 @@ export default function Navbar() {
 
     return (
         <div className="relative">
-            <nav className=" fixed top-0 left-0 right-0 z-50 bg-Green text-white shadow-md flex items-center justify-between px-4 md:px-10 py-2">
+            <nav className=" fixed top-0 left-0 right-0 z-50 bg-Green text-white shadow-md flex items-center justify-around px-4 md:px-10 py-2">
 
                 <div className="flex items-center" ><Link to={'/'}>
                     <img src={LogoImage} alt="" className="w-20 h-20 object-cover bg-white rounded-full" />
-                </Link></div>
+          </Link>
+          </div>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8 font-medium uppercase">

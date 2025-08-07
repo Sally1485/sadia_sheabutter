@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Contact1Image from '../assets/images/location.jpg';
 import SubmitButton from "../components/SubmitButton";
 import Contact2Image from '../assets/images/contact.jpg'
-
+import '@fontsource/poppins';
 
 
 export default function Contact() {
@@ -41,14 +41,14 @@ export default function Contact() {
             <section className="mt-6 md:mt-12  ">
                 <h1 className="text-2xl md:text-4xl font-bold text-center p-4">Get In Touch</h1>
                 <div className=" w-[80%] mx-auto md:pt-4  md:h-[648px] mb-12  flex flex-col md:flex-row justify-around  ">
-                    <form action="https://formspree.io/f/mvgqkjqo" method="POST" className="md:w-[45%] flex flex-col md:items-center gap-8  pt-8">
+                    <form action="https://formspree.io/f/mvgqkjqo" method="POST" className="md:w-[45%] flex flex-col md:items-center md:justify-center gap-8  pt-8">
                         <input type="text" name="name" id="name" placeholder=" Enter Full Name" className="w-full md:w-96 px-4 py-2 border border-Green" />
                         <input type="email" name="email" id="email" placeholder="Enter Email" className="w-full md:w-96 px-4 py-2 border border-Green" />
                         <input type="tel" name="number" id="number" placeholder="Enter Phone Number" className="w-full md:w-96 px-4 py-2 border border-Green" />
                         <textarea name="message" id="message" placeholder="Enter your message" className=" w-full md:w-96 h-40 px-4 py-2 border border-Green"></textarea>
                          <SubmitButton  title={"Submit"}/>
                     </form>
-                   <div className="sm:mt-6 md:w-[45%] h-screen bg-[url('./assets/images/contact5.jpg')] bg-[length:100%_100%] bg-fixed bg-no-repeat  ">
+                   <div className="sm:mt-6 md:w-[45%] h-screen bg-[url('./assets/images/contact5.jpg')] bg-[length:100%_100%] bg-no-repeat  ">
 
                         {/* <img src={Contact1Image} alt="" className="w-full h-auto object-cover" /> */}
                     </div>
