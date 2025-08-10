@@ -6,9 +6,9 @@ import BgImage1 from '../assets/images/bg-1.jpg';
 import BgImage2 from '../assets/images/bg-2.jpg';
 import BgImage3 from '../assets/images/bg-3.jpg';
 import BgImage4 from '../assets/images/bg-4.jpg';
-import BgImage6 from '../assets/images/shea-hair.jpg';
-import BgImage7 from '../assets/images/skin-shea.jpg';
-import BgImage8 from '../assets/images/shea-soap.jpg';
+import BgImage6 from '../assets/images/hair.jpg';
+import BgImage7 from '../assets/images/skin1.jpg';
+import BgImage8 from '../assets/images/soap.jpg';
 import { Link } from "react-router";
 // import './index.css'
 import SubmitButton from "../components/SubmitButton";
@@ -104,21 +104,21 @@ export default function Home() {
             </div>
            <div className="md:mt-8">
      {/* Inside the Home component's return */}
-<Link to={`/shop?category=${encodeURIComponent('Raw Shea')}`}>
+<Link to={`/shop?category=${encodeURIComponent('Soap Products')}`}>
 
-  <FilterrButton title="Shop Shea Products" className={'md:hidden ml-6 '}  />
+  <FilterrButton title="Shop Soap Products" className={'md:hidden ml-6 '}  />
 </Link>
   </div>
 
                 </div>
 
           <div className="flex flex-col  md:flex-row justify-between md:w-[80%] mx-auto gap-4 md:gap-10 items-start pt-20">
-            <h2 className="md:hidden  text-3xl md:text-4xl font-bold text-center ml-8 ">Hair Products</h2>
-                    <div className="md:w-2/5">
-                        <img src={BgImage6} alt="" className="w-84 bg-white shadow-md " />
+            <h2 className="md:hidden  text-3xl md:text-4xl font-bold text-center ml-8 ">Skin Products</h2>
+                    <div className="md:w-1/2">
+                        <img src={BgImage7} alt="" className="w-full bg-white shadow-md " />
                     </div>
-                   <div className="md:w-3/5 flex flex-col md:items-center md:justify-center px-4 md:px-8 py-12">
-  <h2 className="hidden md:flex text-3xl md:text-4xl font-bold text-center mb-6">Hair Products</h2>
+                   <div className="md:w-1/2 flex flex-col md:items-center md:justify-center px-4 md:px-8 py-12">
+  <h2 className="hidden md:flex text-3xl md:text-4xl font-bold text-center mb-6">Skin Products</h2>
   
   <p className="text-center text-sm md:text-base leading-relaxed ">
     Shea butter is a natural fat extracted from the nuts of the shea tree, found primarily in West Africa. 
@@ -130,9 +130,9 @@ export default function Home() {
   </p>
 
   <div className="md:mt-8">
-   <Link to={"/shop?category=encodeURIComponent('Hair Products')"}>
+   <Link to={"/shop?category=encodeURIComponent('Skin Products')"}>
 
-      <FilterrButton title="Shop Hair Products"  />
+      <FilterrButton title="Shop Skin Products"  />
     </Link>
   </div>
 </div>
@@ -142,7 +142,7 @@ export default function Home() {
 
                 <div className="flex flex-col md:flex-row justify-between md:w-[80%] md:mx-auto md:gap-10  items-start  md:pt-20">
                     <div className="md:w-1/2 flex flex-col items-center justify-center px-4 md:px-8 py-12">
-  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Skin Products</h2>
+  <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Hair Products</h2>
   
   <p className="text-center text-sm md:text-base leading-relaxed ">
     Shea butter is a natural fat extracted from the nuts of the shea tree, found primarily in West Africa. 
@@ -154,21 +154,21 @@ export default function Home() {
   </p>
 
   <div className="md:mt-8">
-   <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
+   <Link to={`/shop?category=${encodeURIComponent('Hair Products')}`}>
 
-      <FilterrButton title="Shop Skin Products" className={'hidden md:flex'} />
+      <FilterrButton title="Shop Hair Products" className={'hidden md:flex'} />
     </Link>
   </div>
 </div>
 
                     <div className="md:w-1/2">
-                        <img src={BgImage7} alt="" className="w-full bg-white shadow-md" />
+                        <img src={BgImage6} alt="" className="w-full bg-white shadow-md" />
             </div>
             
              <div className="md:mt-8">
-   <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
+   <Link to={`/shop?category=${encodeURIComponent('Hair Products')}`}>
 
-      <FilterrButton title="Shop Skin Products" className={'md:hidden ml-6'} />
+      <FilterrButton title="Shop Hair Products" className={'md:hidden ml-6'} />
     </Link>
   </div>
 

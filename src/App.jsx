@@ -8,9 +8,11 @@ import Shop from './Pages/Shop';
 import Contact from './Pages/Contact';
 import CartPage from './Pages/CartPage';
 import Login from './Pages/Login';
-import SignUp from './Pages/SignUp'; // You forgot this import
+import SignUp from './Pages/SignUp'; 
+
 
 function App() {
+  
   const [cartItems, setCartItems] = useState([]);
 
   const handleAddToCart = (product) => {
@@ -54,7 +56,10 @@ function App() {
     { path: '/sign-up', element: <SignUp /> },
   ]);
 
+
+
   return <RouterProvider router={SalesRouter} />;
+  
 }
 
 export default App;

@@ -14,7 +14,7 @@ export default function Sidebar({ onCategoryChange }) {
                 <div className="pt-4 flex flex-col justify-between gap-4 font-light">
                     <Link to={"#"} className="hover:underline" onClick={() => onCategoryChange('All Products')}>All Products</Link>
                     <Link to={"#"} className="hover:underline" onClick={() =>onCategoryChange('Soap Products')}>Soap Products</Link>
-                    <Link to={"#"} className="hover:underline" onClick={() => onCategoryChange('Body Products')}>Body Essentials</Link>
+                    <Link to={"#"} className="hover:underline" onClick={() => onCategoryChange('Skin Products')}>Skin Products</Link>
                     <Link to={'#'} className="hover:underline" onClick={() => onCategoryChange('Hair Products')}>Hair Products</Link>
       
                 </div>
@@ -34,7 +34,7 @@ export default function Sidebar({ onCategoryChange }) {
                 <div className="pt-4 flex flex-col justify-between gap-4 font-light">
                     <Link to={"#"} className="hover:underline" onClick={() => onCategoryChange('All Products')}>All Products</Link>
                     <Link to={"#"} className="hover:underline" onClick={() =>onCategoryChange('Soap Products')}>Soap Products</Link>
-                    <Link to={"#"} className="hover:underline" onClick={() => onCategoryChange('Body Products')}>Body Essentials</Link>
+                    <Link to={"#"} className="hover:underline" onClick={() => onCategoryChange('Skin Products')}>Skin Products</Link>
                     <Link to={'#'} className="hover:underline" onClick={() => onCategoryChange('Hair Products')}>Hair Products</Link>
       
                     </div>

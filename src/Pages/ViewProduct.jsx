@@ -5,7 +5,9 @@ import { Link } from "react-router";
 import { useRef, useState } from "react";
 import SalesCard from "../components/SalesCard";
 import Footer from "../components/Footer";
+import { useCart } from "../context/CartContext";
 import '@fontsource/poppins';
+import { useParams, useNavigate } from "react-router";
 
 const productData = {
   id: 1,
@@ -16,9 +18,11 @@ const productData = {
     "Neem Dream is our African black soap facial cleanser featuring Nokware’s holy grail acne fighting, hyperpigmentation rockstar ingredient neem oil.",
 };
 
-export default function ViewProduct({ handleAddToCart }) {
+export default function ViewProduct() {
   const scrollRef = useRef(null);
   const [quantity, setQuantity] = useState(1);
+
+  const { addToCart } = useCart();
 
   const handleIncrease = () => {
     setQuantity(prev => prev + 1);
@@ -44,6 +48,12 @@ export default function ViewProduct({ handleAddToCart }) {
       });
     }
   };
+const { id } = useParams();
+const product = productData; 
+
+    if (!product) return <p>Product not found.</p>;
+
+    const navigate = useNavigate();
 
  
 
@@ -71,7 +81,7 @@ export default function ViewProduct({ handleAddToCart }) {
           {/* Text and Controls */}
           <div className="md:w-1/2 flex flex-col gap-4 md:pt-16 ">
             <h2 className="text-3xl font-bold">{productData.name}</h2>
-            <h3 className="text-lg font-semibold ">Ghc {productData.price.toFixed(2)}</h3>
+            <h3 className="text-lg font-semibold ">Gh₵{productData.price.toFixed(2)}</h3>
             <p className="text-lg/7 font-light pt-2 pb-2">
               {productData.description}
             </p>
@@ -93,12 +103,13 @@ export default function ViewProduct({ handleAddToCart }) {
             </div>
             <div className="flex flex-col gap-4">
               <div>
-                <button
-                  onClick={() => handleAddToCart({ ...productData, quantity })}
-                  className="w-full px-6 py-2 border border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition duration-300"
-                >
-                  Add to Cart
-                </button>
+               <button
+  onClick={() => addToCart(productData, quantity)}
+  className="w-full px-6 py-2 border border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition duration-300"
+>
+  Add to Cart
+</button>
+
               </div>
 
               <div>
