@@ -6,20 +6,11 @@ import { useState } from "react";
 import '@fontsource/poppins';
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
-import TestImage from '../assets/images/shea.jpg'
+import TestImage from '../assets/images/shea.jpg';
+import ProductsData from "../Data/Products";
 
 
-const ProductsData = [
-    { id: 1, name: 'Butter',price:'Gh₵300', category: 'Soap Products', image: TestImage  },
-    { id: 2, name: 'U Hair', price:'Gh₵200', category: 'Hair Products',image: TestImage  },
-    { id: 3, name: 'Lizzy Cream', price:'Gh₵100', category: 'Skin Products', image: TestImage },
-    { id: 4, name: 'plain Shea', price:'Gh₵400', category: 'Soap Products', image: TestImage },
-    { id: 5, name: 'Soft Hair', price:'Gh₵600', category: 'Hair Products',image: TestImage },
-    { id: 6, name: 'Soft Skin', price:'Gh₵1600', category: 'Skin Products', image: TestImage },
-    { id: 7, name: 'Plant Shea', price:'Gh₵900', category: 'Soap Products',image: TestImage },
-    { id: 8, name: 'Many Hair', price:'Gh₵800', category: 'Hair Products', image: TestImage },
-    { id: 9, name: 'Brown Skin', price:'Gh₵600', category: 'Skin Products',image: TestImage },
-]
+ 
 
 export default function Shop() {
         const [SelectCategory, SetSelectCategory] = useState('All Products');

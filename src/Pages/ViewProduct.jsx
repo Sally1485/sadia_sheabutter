@@ -1,22 +1,16 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "../components/NavBar";
-import BgImage6 from "../assets/images/bg-6.jpg";
+
 import { Link } from "react-router"; 
-import { useRef, useState } from "react";
+import { useRef, useState, } from "react";
 import SalesCard from "../components/SalesCard";
 import Footer from "../components/Footer";
-import { useCart } from "../context/CartContext";
+import { useCart, } from "../context/CartContext";
 import '@fontsource/poppins';
 import { useParams, useNavigate } from "react-router";
+import ProductsData from "../Data/Products";
 
-const productData = {
-  id: 1,
-  name: "Shea Butter",
-  price: 12.0,
-  image: BgImage6,
-  description:
-    "Neem Dream is our African black soap facial cleanser featuring Nokware’s holy grail acne fighting, hyperpigmentation rockstar ingredient neem oil.",
-};
+
 
 export default function ViewProduct() {
   const scrollRef = useRef(null);
@@ -49,7 +43,7 @@ export default function ViewProduct() {
     }
   };
 const { id } = useParams();
-const product = productData; 
+ const product = ProductsData.find((p) => p.id === id);
 
     if (!product) return <p>Product not found.</p>;
 
@@ -73,17 +67,19 @@ const product = productData;
         <div className="flex flex-col md:flex-row justify-between md:gap-10">
           <div className="md:w-1/2 pt-10 ">
             <img
-              src={productData.image}
+              src={ProductsData.image}
               className="w-full md:w-[500px] md:max-h-[500px] object-cover h-auto max-h-[300px]"
-              alt={productData.name}
+              alt={ProductsData.name}
             />
           </div>
           {/* Text and Controls */}
           <div className="md:w-1/2 flex flex-col gap-4 md:pt-16 ">
-            <h2 className="text-3xl font-bold">{productData.name}</h2>
-            <h3 className="text-lg font-semibold ">Gh₵{productData.price.toFixed(2)}</h3>
+          
+            <p>{ProductsData.id}</p>
+            <img src={ProductsData.image} alt={ProductsData.alt} />
+            <h3 className="text-lg font-semibold ">Gh₵{ProductsData.price}</h3>
             <p className="text-lg/7 font-light pt-2 pb-2">
-              {productData.description}
+              {ProductsData.description}
             </p>
             <div className="flex flex-col">
               <h2 className="font-semibold mb-1 items-center">Quantity</h2>
@@ -104,7 +100,7 @@ const product = productData;
             <div className="flex flex-col gap-4">
               <div>
                <button
-  onClick={() => addToCart(productData, quantity)}
+  onClick={() => addToCart(ProductsData, quantity)}
   className="w-full px-6 py-2 border border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition duration-300"
 >
   Add to Cart

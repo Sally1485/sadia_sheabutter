@@ -130,10 +130,9 @@ export default function Home() {
   </p>
 
   <div className="md:mt-8">
-   <Link to={"/shop?category=encodeURIComponent('Skin Products')"}>
-
-      <FilterrButton title="Shop Skin Products"  />
-    </Link>
+    <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
+                                <FilterrButton title="Shop Skin Products"  />
+                            </Link>
   </div>
 </div>
 

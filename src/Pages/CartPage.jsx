@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
 
+
 export default function CartPage() {
   const { cartItems, removeFromCart, clearCart, updateCartItemQuantity } = useCart();
 
@@ -21,7 +22,7 @@ export default function CartPage() {
   return (
     <aside className="fixed top-20 right-4 z-40 bg-white shadow-lg rounded-md w-80 max-h-[80vh] overflow-y-auto font-poppins">
       {/* Header */}
-      <div className="bg-green-500 p-4 rounded-t-lg text-white">
+      <div className="bg-green p-4 rounded-t-lg text-white">
         <h1 className="text-lg font-semibold">
           Cart ({itemCount} item{itemCount !== 1 ? "s" : ""})
         </h1>
