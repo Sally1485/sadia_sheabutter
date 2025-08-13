@@ -109,7 +109,7 @@ const { id } = useParams();
               </div>
 
               <div>
-                <Link to={"/check-out"}>
+                <Link to={"/check-out"} state={{ product, quantity }}>
                   <button className="w-full px-6 py-2 border border-green-700 text-green-700 hover:bg-green-700 hover:text-white transition duration-300">
                     Buy Now
                   </button>

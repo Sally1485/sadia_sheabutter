@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
 
-export default function Checkout({ cartItems, total, clearCart }) {
+export default function Checkout({ cartItems = [], total, clearCart }) {
 
     const [loading, setLoading] = useState(false);
 
@@ -35,7 +35,7 @@ export default function Checkout({ cartItems, total, clearCart }) {
         };
 
         emailjs
-            .send("service_ulzbtao", "template_1ypr89r", templateParams, "4VorpMdP2j_3nH7kp")
+            .send("service_g6lxcat", "template_1ypr89r", templateParams, "5GoqkQ3CwMvxTUoBk")
             .then(() => {
                 toast.success('Order Sent Successfully')
                 clearCart();
