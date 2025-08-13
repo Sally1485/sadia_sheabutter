@@ -76,7 +76,7 @@ export default function Navbar() {
 </nav>
 
 {isOpen && (
-  <div className="fixed top-20 right-10 z-40 p-4 w-80 h-auto bg-white rounded shadow-lg">
+  <div>
     <CartPage />
   </div>
 )}

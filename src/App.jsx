@@ -7,8 +7,7 @@ import ViewProduct from './Pages/ViewProduct';
 import Shop from './Pages/Shop';
 import Contact from './Pages/Contact';
 import CartPage from './Pages/CartPage';
-import Login from './Pages/Login';
-import SignUp from './Pages/SignUp'; 
+import Checkout from './Pages/Checkout';
 
 
 function App() {
@@ -48,12 +47,11 @@ function App() {
     { path: '/', element: <Home /> },
     { path: '/about', element: <About /> },
     { path: '*', element: <Notfound /> },
-    { path: '/view-product', element: <ViewProduct handleAddToCart={handleAddToCart} /> },
+    { path: '/view-product/:id', element: <ViewProduct handleAddToCart={handleAddToCart} /> },
     { path: '/shop', element: <Shop /> },
     { path: '/contact', element: <Contact /> },
     { path: '/cart-page', element: <CartPage cartItems={cartItems} updateQuantity={updateQuantity} removeItem={removeItem} /> },
-    { path: '/login', element: <Login /> },
-    { path: '/sign-up', element: <SignUp /> },
+    {path: '/check-out', element: <Checkout/>}
   ]);
 
 

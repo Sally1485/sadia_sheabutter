@@ -1,4 +1,5 @@
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router";
 
 
 export default function CartPage() {
@@ -22,7 +23,7 @@ export default function CartPage() {
   return (
     <aside className="fixed top-20 right-4 z-40 bg-white shadow-lg rounded-md w-80 max-h-[80vh] overflow-y-auto font-poppins">
       {/* Header */}
-      <div className="bg-green p-4 rounded-t-lg text-white">
+      <div className="bg-Green p-4 rounded-t-lg text-white">
         <h1 className="text-lg font-semibold">
           Cart ({itemCount} item{itemCount !== 1 ? "s" : ""})
         </h1>
@@ -49,7 +50,7 @@ export default function CartPage() {
                 <div className="flex-1">
                   <h2 className="font-medium">{item.name}</h2>
                   <p className="text-sm text-gray-600">
-                    Price: Gh₵{item.price ? item.price.toFixed(2) : "0.00"}
+                    Price: Gh₵{item.price}
                   </p>
 
                   {/* Quantity Controls */}
@@ -95,10 +96,17 @@ export default function CartPage() {
 
       {/* Footer */}
       {itemCount > 0 && (
+        
         <div className="p-4 border-t text-right">
           <p className="text-lg font-bold">
             Total: Gh₵ {totalAmount.toFixed(2)}
           </p>
+          <Link to={'/check-out'}
+            
+            className="mt-3 bg-Green text-white px-4 py-2 rounded mr-18 md:mr-22 hover:bg-green-400"
+          >
+            Checkout
+          </Link>
           <button
             onClick={clearCart}
             className="mt-3 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"

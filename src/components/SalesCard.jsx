@@ -4,7 +4,8 @@ import { Link } from 'react-router';
 import '@fontsource/poppins';
 
 
-export default function SalesCard ({salesImage, name, price,category}) {
+
+export default function SalesCard ({id, salesImage, name, price,category}) {
     return(
         <div className='flex flex-col  md:w-[250px]   md:h-auto overflow-hidden p-4 '>
          <div>
@@ -16,7 +17,7 @@ export default function SalesCard ({salesImage, name, price,category}) {
             <p className='font-light '>{price}</p>
            </div>
             <div className='flex md:justify-center  pb-4'>
-            <Link to={'/view-product'}><SubmitButton title={"View Product"}  /></Link>
+            <Link to={`/view-product/${id}`}><SubmitButton title={"View Product"}  /></Link>
             </div>
         </div>
     ) 

@@ -1,14 +1,13 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Navbar from "../components/NavBar";
-
-import { Link } from "react-router"; 
 import { useRef, useState, } from "react";
 import SalesCard from "../components/SalesCard";
 import Footer from "../components/Footer";
 import { useCart, } from "../context/CartContext";
 import '@fontsource/poppins';
-import { useParams, useNavigate } from "react-router";
+import { Link, useParams } from "react-router";
 import ProductsData from "../Data/Products";
+
 
 
 
@@ -43,11 +42,10 @@ export default function ViewProduct() {
     }
   };
 const { id } = useParams();
- const product = ProductsData.find((p) => p.id === id);
+ const product = ProductsData.find((item) => item.id === Number(id));
 
     if (!product) return <p>Product not found.</p>;
 
-    const navigate = useNavigate();
 
  
 
@@ -67,19 +65,21 @@ const { id } = useParams();
         <div className="flex flex-col md:flex-row justify-between md:gap-10">
           <div className="md:w-1/2 pt-10 ">
             <img
-              src={ProductsData.image}
-              className="w-full md:w-[500px] md:max-h-[500px] object-cover h-auto max-h-[300px]"
-              alt={ProductsData.name}
+              src={product.image}
+              className="w-full md:w-[500px] md:max-h-[500px] shadow-md object-cover h-auto max-h-[300px]"
+              alt={product.name}
             />
           </div>
           {/* Text and Controls */}
           <div className="md:w-1/2 flex flex-col gap-4 md:pt-16 ">
           
-            <p>{ProductsData.id}</p>
-            <img src={ProductsData.image} alt={ProductsData.alt} />
-            <h3 className="text-lg font-semibold ">Gh₵{ProductsData.price}</h3>
+            <p className="hidden">{product.id}</p>
+            <h1 className="text-2xl font-bold md:text-3xl">{ product.name}</h1>
+            {/* <img src={product.image} alt={product.alt} /> */}
+            <p className="text-lg/7 font-light pt-2 pb-2">Category: {product.category}</p>
+            <h3 className="text-lg font-semibold ">Gh₵{product.price}</h3>
             <p className="text-lg/7 font-light pt-2 pb-2">
-              {ProductsData.description}
+              {product.description}
             </p>
             <div className="flex flex-col">
               <h2 className="font-semibold mb-1 items-center">Quantity</h2>
@@ -92,7 +92,7 @@ const { id } = useParams();
                 min="1"
                 onChange={handleQuantityChange}
                 className="w-20 rounded px-2 py-1 border border-green-700 text-center"
-                readOnly
+              
               />
               <button className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300 focus:outline-none" onClick={handleIncrease}>+</button>
            </div>
@@ -100,7 +100,7 @@ const { id } = useParams();
             <div className="flex flex-col gap-4">
               <div>
                <button
-  onClick={() => addToCart(ProductsData, quantity)}
+  onClick={() => addToCart(product, quantity)}
   className="w-full px-6 py-2 border border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition duration-300"
 >
   Add to Cart
@@ -109,7 +109,7 @@ const { id } = useParams();
               </div>
 
               <div>
-                <Link to={"/checkout"}>
+                <Link to={"/check-out"}>
                   <button className="w-full px-6 py-2 border border-green-700 text-green-700 hover:bg-green-700 hover:text-white transition duration-300">
                     Buy Now
                   </button>
@@ -142,6 +142,7 @@ const { id } = useParams();
             >
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <div
+                  
                   key={item}
                   className="snap-center shrink-0 w-[300px] bg-white rounded-xl shadow-md p-4"
                 >

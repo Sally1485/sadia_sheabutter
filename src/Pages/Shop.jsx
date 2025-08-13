@@ -13,13 +13,13 @@ import ProductsData from "../Data/Products";
  
 
 export default function Shop() {
-        const [SelectCategory, SetSelectCategory] = useState('All Products');
+        const [selectCategory, SetSelectCategory] = useState('All Products');
 
         const HandleCategorychange = (category) => {
            SetSelectCategory(category); 
         };
 
-        const FilteredProducts = SelectCategory ==='All Products' ? ProductsData : ProductsData.filter(product => product.category === SelectCategory);
+        const FilteredProducts = selectCategory ==='All Products' ? ProductsData : ProductsData.filter(product => product.category === selectCategory);
 
 
 
@@ -29,14 +29,14 @@ export default function Shop() {
             <div className="mt-40 md:mr-12 flex items-center w-[90%] mx-auto  font-light">
               <Link to={'/'} className="font-light">Home</Link>
                 <div><ChevronRight /></div>
-                <div className="font-light">{SelectCategory }</div>
+                <div className="font-light">{selectCategory }</div>
 
             </div>
             <div className="flex flex-col md:flex-row gap-6 w-[90%] mx-auto">
                 <Sidebar onCategoryChange={HandleCategorychange} />
                 <section className="md:mt-10  flex-1  rounded-lg ">
                     <div className="">
-                        <h1 className="text-2xl md:text-4xl font-medium ">{SelectCategory }</h1>
+                        <h1 className="text-2xl md:text-4xl font-medium ">{selectCategory }</h1>
                         <div className="flex flex-col md:flex-row justify-between gap-6  m-4 pt-4 md:pt-6">
                             <div>
                                 <h1>{FilteredProducts.length } products </h1>
@@ -62,7 +62,7 @@ export default function Shop() {
                         <div className="grid  md:grid-cols-4 pt-8">
                             {FilteredProducts.map(product => {
                                 return (
-                                    <SalesCard key={product.id} salesImage={product.image} name={product.name} category={product.category} price={product.price} buttonText={product.buttonText} />
+                                    <SalesCard key={product.id} id={product.id} salesImage={product.image} name={product.name} category={product.category} price={product.price}  />
                                 )
                             })}
                         </div>
@@ -103,9 +103,9 @@ export default function Shop() {
             </div>
 
             {/* Product list would go here */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* <ProductCard /> etc. */}
-            </div>
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+            </div> */}
         </section>
     </div>
 </div>

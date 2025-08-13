@@ -1,18 +1,30 @@
 import ErrorImage from '../assets/images/error.png';
-import { Link } from 'react-router';
+import { Link } from 'react-router'; 
 import { MoveDown } from 'lucide-react';
 
-export default function Notfound() {
-    return (
-        <div>
-            <div className=' flex justify-center items-center  bg-white'>
-                <img src={ErrorImage} alt="" className='w-[80%] h-screen object-cover' />
-            </div>
-            <div className='flex flex-col justify-between items-center gap-5'>
-                <h1 className='text-3xl font-bold'>Back to </h1>
-                <MoveDown  className='animate-bounce'/>
-                <Link to={'/'}><button className='px-12 py-2 bg-Green rounded-2xl text-white'>Homepage</button></Link>
-            </div>
-        </div>
-    )
+export default function NotFound() {
+  return (
+    <div className="min-h-screen flex flex-col justify-center items-center bg-white px-4">
+      {/* Error Image */}
+      <img
+        src={ErrorImage}
+        alt="404 Error - Page Not Found"
+        className="w-96 h-auto mb-6"
+      />
+
+      {/* Text & Navigation */}
+      <h1 className="text-3xl font-bold text-gray-800 mb-2">Page Not Found</h1>
+      <p className="text-gray-600 mb-4">Looks like you took a wrong turn.</p>
+
+      {/* Bounce Arrow */}
+      <MoveDown className="animate-bounce mb-4 text-Green" size={32} />
+
+      {/* Homepage Link */}
+      <Link to="/">
+        <button className="px-8 py-2 bg-Green rounded-2xl text-white hover:bg-green-700 transition-colors">
+          Back to Homepage
+        </button>
+      </Link>
+    </div>
+  );
 }

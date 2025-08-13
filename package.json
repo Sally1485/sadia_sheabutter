@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fontsource-variable/eb-garamond": "^5.2.6",
     "@fontsource-variable/source-sans-3": "^5.2.8",
     "@fontsource/poppins": "^5.2.6",
@@ -17,6 +18,7 @@
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hot-toast": "^2.5.2",
     "react-router": "^7.6.3",
     "react-spinners": "^0.17.0",
     "swr": "^2.3.4"
