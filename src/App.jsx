@@ -11,7 +11,7 @@ import Checkout from './Pages/Checkout';
 
 
 function App() {
-  
+
   const [cartItems, setCartItems] = useState([]);
 
   const handleAddToCart = (product) => {
@@ -51,13 +51,13 @@ function App() {
     { path: '/shop', element: <Shop /> },
     { path: '/contact', element: <Contact /> },
     { path: '/cart-page', element: <CartPage cartItems={cartItems} updateQuantity={updateQuantity} removeItem={removeItem} /> },
-    {path: '/check-out', element: <Checkout/>}
+    { path: '/check-out', element: <Checkout /> }
   ]);
 
 
 
   return <RouterProvider router={SalesRouter} />;
-  
+
 }
 
 export default App;

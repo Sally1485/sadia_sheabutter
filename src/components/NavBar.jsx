@@ -13,7 +13,7 @@ export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
 
-        const { cartItems } = useCart();
+    const { cartItems } = useCart();
     const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     return (
@@ -22,64 +22,64 @@ export default function Navbar() {
 
                 <div className="flex items-center" ><Link to={'/'}>
                     <img src={LogoImage} alt="" className="w-20 h-20 object-cover bg-white rounded-full" />
-          </Link>
-          </div>
+                </Link>
+                </div>
 
-          <div className="flex space-x-8 font-medium uppercase">
-              {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8 font-medium uppercase">
-                    <Link to={'/'} className="hover:text-amber-300">Home</Link>
-                    <Link to={'/shop'}  className="hover:text-amber-300">Shop</Link>
-                    <Link to={'/about'}  className="hover:text-amber-300">Our Story</Link>
-            <Link to={'/contact'} className="hover:text-amber-300">Contact</Link>
-            
+                <div className="flex space-x-8 font-medium uppercase">
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex items-center space-x-8 font-medium uppercase">
+                        <Link to={'/'} className="hover:text-amber-300">Home</Link>
+                        <Link to={'/shop'} className="hover:text-amber-300">Shop</Link>
+                        <Link to={'/about'} className="hover:text-amber-300">Our Story</Link>
+                        <Link to={'/contact'} className="hover:text-amber-300">Contact</Link>
+
                     </div>
-                    
 
-          <div>
-              <Link onClick={() => setIsOpen(!isOpen)} className="hover:text-amber-300">
-                  {totalItems > 0 && (
-                            <span className="absolute top-7 right-21 bg-[#9C88FF] text-white rounded-full px-2 text-sm">
-                                {totalItems}
-                            </span>
-                        )}
-                <ShoppingBag /></Link>
-</div>
-              
 
-               
                     <div>
-                        <button className="md:hidden outline-none" onClick={() => setmenuMobileOpen(!menuMobileOpen)}>{menuMobileOpen ? <XIcon /> : <MenuIcon  className="hover:text-amber-300" />}</button>
+                        <Link onClick={() => setIsOpen(!isOpen)} className="hover:text-amber-300">
+                            {totalItems > 0 && (
+                                <span className="absolute top-7 right-21 bg-[#9C88FF] text-white rounded-full px-2 text-sm">
+                                    {totalItems}
+                                </span>
+                            )}
+                            <ShoppingBag /></Link>
                     </div>
+
+
+
+                    <div>
+                        <button className="md:hidden outline-none" onClick={() => setmenuMobileOpen(!menuMobileOpen)}>{menuMobileOpen ? <XIcon /> : <MenuIcon className="hover:text-amber-300" />}</button>
                     </div>
+                </div>
 
-             {menuMobileOpen && (
-  <div className="md:hidden absolute top-full w-full z-50 bg-green-700 shadow-md border border-amber-400 text-white px-6 py-4 flex flex-col gap-4 uppercase">
-    
-    {/* Navigation Links */}
-    <Link to="/" className="hover:text-amber-300">Home</Link>
-    <Link to="/shop" className="hover:text-amber-300">Shop</Link>
-    <Link to="/about" className="hover:text-amber-300">Our Story</Link>
-    <Link to="/contact" className="hover:text-amber-300">Contact</Link>
+                {menuMobileOpen && (
+                    <div className="md:hidden absolute top-full w-full z-50 bg-green-700 shadow-md border border-amber-400 text-white px-6 py-4 flex flex-col gap-4 uppercase">
 
-    {/* Divider */}
-    <div className="border-t border-white/20 my-2"></div>
+                        {/* Navigation Links */}
+                        <Link to="/" className="hover:text-amber-300">Home</Link>
+                        <Link to="/shop" className="hover:text-amber-300">Shop</Link>
+                        <Link to="/about" className="hover:text-amber-300">Our Story</Link>
+                        <Link to="/contact" className="hover:text-amber-300">Contact</Link>
 
-    {/* Auth + Cart Section */}
-    <div className="flex justify-between items-center">
-     
-    </div>
-  </div>
-                    )}
-                    
+                        {/* Divider */}
+                        <div className="border-t border-white/20 my-2"></div>
 
-</nav>
+                        {/* Auth + Cart Section */}
+                        <div className="flex justify-between items-center">
 
-{isOpen && (
-  <div>
-    <CartPage />
-  </div>
-)}
-</div>
-)
+                        </div>
+                    </div>
+                )}
+
+
+            </nav>
+
+            {isOpen && (
+                <div>
+                    <CartPage />
+                </div>
+            )}
+        </div>
+    )
 }

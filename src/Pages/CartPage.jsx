@@ -96,13 +96,13 @@ export default function CartPage() {
 
       {/* Footer */}
       {itemCount > 0 && (
-        
+
         <div className="p-4 border-t text-right">
           <p className="text-lg font-bold">
             Total: Gh₵ {totalAmount.toFixed(2)}
           </p>
           <Link to={'/check-out'}
-            
+
             className="mt-3 bg-Green text-white px-4 py-2 rounded mr-18 md:mr-22 hover:bg-green-400"
           >
             Checkout

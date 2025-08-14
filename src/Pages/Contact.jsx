@@ -45,9 +45,9 @@ export default function Contact() {
                         <input type="email" name="email" id="email" placeholder="Enter Email" className="w-full md:w-96 px-4 py-2 border border-Green" />
                         <input type="tel" name="number" id="number" placeholder="Enter Phone Number" className="w-full md:w-96 px-4 py-2 border border-Green" />
                         <textarea name="message" id="message" placeholder="Enter your message" className=" w-full md:w-96 h-40 px-4 py-2 border border-Green"></textarea>
-                         <SubmitButton  title={"Submit"}/>
+                        <SubmitButton title={"Submit"} />
                     </form>
-                   <div className="sm:mt-6 md:w-[45%] h-screen bg-[url('./assets/images/contact5.jpg')] bg-[length:100%_100%] bg-no-repeat  ">
+                    <div className="sm:mt-6 md:w-[45%] h-screen bg-[url('./assets/images/contact5.jpg')] bg-[length:100%_100%] bg-no-repeat  ">
 
                         {/* <img src={Contact1Image} alt="" className="w-full h-auto object-cover" /> */}
                     </div>

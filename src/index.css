@@ -2,12 +2,13 @@
 
 
 
-@theme{
-    /* colors */
-    --color-milk: #FFF2E1;
-    --color-brown: #5D3A15;
-    --color-Green: #106738;
+@theme {
+  /* colors */
+  --color-milk: #FFF2E1;
+  --color-brown: #5D3A15;
+  --color-Green: #106738;
 }
+
 /* @font-face {
     font-family: "Bitcount Prop Double";
     src: url("./fonts/Bitcount_Prop_Double.zip") format('woff2'),;
@@ -24,6 +25,8 @@ body {
 /* index.css or App.css */
 .handwritten {
   font-family: 'Yellowtail', cursive;
-  color: #FFBF00; /* gold/yellow */
-  font-size: 2rem; /* adjust as needed */
+  color: #FFBF00;
+  /* gold/yellow */
+  font-size: 2rem;
+  /* adjust as needed */
 }

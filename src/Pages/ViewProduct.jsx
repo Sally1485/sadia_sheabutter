@@ -17,19 +17,22 @@ export default function ViewProduct() {
 
   const { addToCart } = useCart();
 
+  // handle quantity increase
   const handleIncrease = () => {
     setQuantity(prev => prev + 1);
   }
 
+  // handle quantity decrease
   const handleDecrease = () => {
     if (quantity > 1) {
       setQuantity(prev => prev - 1);
     }
   };
 
-   const handleQuantityChange = (e) => {
-     const value = Math.max(1, parseInt(e.target.value || 1))
-     setQuantity(value)
+  // handle change in quantity
+  const handleQuantityChange = (e) => {
+    const value = Math.max(1, parseInt(e.target.value || 1))
+    setQuantity(value)
   };
 
   const scroll = (direction) => {
@@ -41,13 +44,11 @@ export default function ViewProduct() {
       });
     }
   };
-const { id } = useParams();
- const product = ProductsData.find((item) => item.id === Number(id));
 
-    if (!product) return <p>Product not found.</p>;
+  const { id } = useParams();
+  const product = ProductsData.find((item) => item.id === Number(id));
+  if (!product) return <p>Product not found.</p>;
 
-
- 
 
   return (
     <div>
@@ -61,6 +62,7 @@ const { id } = useParams();
             Back
           </Link>
         </span>
+
         {/* Main Content */}
         <div className="flex flex-col md:flex-row justify-between md:gap-10">
           <div className="md:w-1/2 pt-10 ">
@@ -70,11 +72,12 @@ const { id } = useParams();
               alt={product.name}
             />
           </div>
+
           {/* Text and Controls */}
           <div className="md:w-1/2 flex flex-col gap-4 md:pt-16 ">
-          
             <p className="hidden">{product.id}</p>
-            <h1 className="text-2xl font-bold md:text-3xl">{ product.name}</h1>
+            <h1 className="text-2xl font-bold md:text-3xl">{product.name}</h1>
+
             {/* <img src={product.image} alt={product.alt} /> */}
             <p className="text-lg/7 font-light pt-2 pb-2">Category: {product.category}</p>
             <h3 className="text-lg font-semibold ">Gh₵{product.price}</h3>
@@ -84,27 +87,27 @@ const { id } = useParams();
             <div className="flex flex-col">
               <h2 className="font-semibold mb-1 items-center">Quantity</h2>
               <div className="flex items-center space-x-2">
-                   
-              <button className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300 focus:outline-none" disabled={quantity === 1} onClick={handleDecrease}>-</button>
-              <input
-                type="number"
-                value={quantity}
-                min="1"
-                onChange={handleQuantityChange}
-                className="w-20 rounded px-2 py-1 border border-green-700 text-center"
-              
-              />
-              <button className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300 focus:outline-none" onClick={handleIncrease}>+</button>
-           </div>
+
+                <button className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300 focus:outline-none" disabled={quantity === 1} onClick={handleDecrease}>-</button>
+                <input
+                  type="number"
+                  value={quantity}
+                  min="1"
+                  onChange={handleQuantityChange}
+                  className="w-20 rounded px-2 py-1 border border-green-700 text-center"
+
+                />
+                <button className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300 focus:outline-none" onClick={handleIncrease}>+</button>
+              </div>
             </div>
             <div className="flex flex-col gap-4">
               <div>
-               <button
-  onClick={() => addToCart(product, quantity)}
-  className="w-full px-6 py-2 border border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition duration-300"
->
-  Add to Cart
-</button>
+                <button
+                  onClick={() => addToCart(product, quantity)}
+                  className="w-full px-6 py-2 border border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition duration-300"
+                >
+                  Add to Cart
+                </button>
 
               </div>
 
@@ -127,6 +130,7 @@ const { id } = useParams();
 
         <div className="px-4 py-10 bg-white">
           <div className="relative">
+
             {/* Left Arrow */}
             <button
               onClick={() => scroll("left")}
@@ -142,7 +146,7 @@ const { id } = useParams();
             >
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <div
-                  
+
                   key={item}
                   className="snap-center shrink-0 w-[300px] bg-white rounded-xl shadow-md p-4"
                 >

@@ -1,5 +1,5 @@
 import ErrorImage from '../assets/images/error.png';
-import { Link } from 'react-router'; 
+import { Link } from 'react-router';
 import { MoveDown } from 'lucide-react';
 
 export default function NotFound() {

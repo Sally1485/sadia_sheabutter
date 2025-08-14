@@ -10,16 +10,18 @@ import TestImage from '../assets/images/shea.jpg';
 import ProductsData from "../Data/Products";
 
 
- 
+
 
 export default function Shop() {
-        const [selectCategory, SetSelectCategory] = useState('All Products');
+    const [selectCategory, SetSelectCategory] = useState('All Products');
 
-        const HandleCategorychange = (category) => {
-           SetSelectCategory(category); 
-        };
+    // Handle Category change
+    const HandleCategorychange = (category) => {
+        SetSelectCategory(category);
+    };
 
-        const FilteredProducts = selectCategory ==='All Products' ? ProductsData : ProductsData.filter(product => product.category === selectCategory);
+    // Filter products
+    const FilteredProducts = selectCategory === 'All Products' ? ProductsData : ProductsData.filter(product => product.category === selectCategory);
 
 
 
@@ -27,42 +29,44 @@ export default function Shop() {
         <div>
             <Navbar />
             <div className="mt-40 md:mr-12 flex items-center w-[90%] mx-auto  font-light">
-              <Link to={'/'} className="font-light">Home</Link>
+                <Link to={'/'} className="font-light">Home</Link>
                 <div><ChevronRight /></div>
-                <div className="font-light">{selectCategory }</div>
+                <div className="font-light">{selectCategory}</div>
 
             </div>
             <div className="flex flex-col md:flex-row gap-6 w-[90%] mx-auto">
                 <Sidebar onCategoryChange={HandleCategorychange} />
                 <section className="md:mt-10  flex-1  rounded-lg ">
                     <div className="">
-                        <h1 className="text-2xl md:text-4xl font-medium ">{selectCategory }</h1>
+                        <h1 className="text-2xl md:text-4xl font-medium ">{selectCategory}</h1>
                         <div className="flex flex-col md:flex-row justify-between gap-6  m-4 pt-4 md:pt-6">
                             <div>
-                                <h1>{FilteredProducts.length } products </h1>
-                           </div>
+                                <h1>{FilteredProducts.length} products </h1>
+                            </div>
+
                             <div className="flex items-center gap-2">
+                                {/* filteration by sorting */}
                                 <label htmlFor="label-items">Sort by:</label>
-                                 <select name="recommendation"
-                                id="recommendation"
-                                className="px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
-                                <option value="1">Recommended</option>
-                                <option value="2">Newest</option>
-                                <option value="3">Price(low to high)</option>
-                                <option value="4">Price(high to low)</option>
-                                <option value="5">Name A-Z</option>
-                                <option value="6">Name Z-A</option>
-                            
-                            </select>
-                           </div>
+                                <select name="recommendation"
+                                    id="recommendation"
+                                    className="px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="1">Recommended</option>
+                                    <option value="2">Newest</option>
+                                    <option value="3">Price(low to high)</option>
+                                    <option value="4">Price(high to low)</option>
+                                    <option value="5">Name A-Z</option>
+                                    <option value="6">Name Z-A</option>
+
+                                </select>
+                            </div>
                         </div>
 
                         {/* select Category */}
-                    
+
                         <div className="grid  md:grid-cols-4 pt-8">
                             {FilteredProducts.map(product => {
                                 return (
-                                    <SalesCard key={product.id} id={product.id} salesImage={product.image} name={product.name} category={product.category} price={product.price}  />
+                                    <SalesCard key={product.id} id={product.id} salesImage={product.image} name={product.name} category={product.category} price={product.price} />
                                 )
                             })}
                         </div>

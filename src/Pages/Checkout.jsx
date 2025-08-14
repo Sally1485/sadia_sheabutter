@@ -2,10 +2,17 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
+import { useCart } from '../context/CartContext';
 
-export default function Checkout({ cartItems = [], total, clearCart }) {
+export default function Checkout() {
 
     const [loading, setLoading] = useState(false);
+
+    const {cartItems, clearCart} = useCart();
+    const total = cartItems.reduce(
+        (sum, item) => sum + item.price * item.quantity, 0
+    );
+
 
     const navigate = useNavigate();
 
@@ -34,6 +41,7 @@ export default function Checkout({ cartItems = [], total, clearCart }) {
             order_total: `Gh₵ ${total}`,
         };
 
+
         emailjs
             .send("service_g6lxcat", "template_1ypr89r", templateParams, "5GoqkQ3CwMvxTUoBk")
             .then(() => {
@@ -41,16 +49,16 @@ export default function Checkout({ cartItems = [], total, clearCart }) {
                 clearCart();
                 setBuyer({ name: "", email: "", phone: "", address: "" });
                 setTimeout(() => {
-                navigate("/shop");
-            }, 1500);
+                    navigate("/shop");
+                }, 1500);
             })
             .catch(() => {
                 toast.error('Failed to send order. Please try again')
             })
             .finally(() => {
-            setLoading(false)
-        })
-        
+                setLoading(false)
+            })
+
     };
 
     return (
@@ -110,9 +118,9 @@ export default function Checkout({ cartItems = [], total, clearCart }) {
                 >
                     {loading ? (
                         <div className='animate-pulse'>Sending...</div>) : (
-                       "Place Order"     
+                        "Place Order"
                     )}
-                    
+
                 </button>
             </form>
         </div>
