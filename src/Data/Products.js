@@ -3,6 +3,7 @@ import SheaImg2 from '../assets/images/skin-shea.jpg';
 import SheaImg3 from '../assets/images/shea-hair.jpg';
 import SheaImg4 from '../assets/images/shea-soap.jpg';
 
+// Details of each products
 const ProductsData = [
     {
         id: 1,

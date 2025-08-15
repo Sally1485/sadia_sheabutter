@@ -1,12 +1,14 @@
 import { FacebookIcon, InstagramIcon, Twitter } from "lucide-react";
-import LogoImage from '../assets/images/logo2.png'
+import LogoImage from '../assets/images/logo2.png';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 
 
 export default function Footer() {
     return (
-        <div className="bg-milk  p-10 mt-4">
+        <div className="bg-milk  p-10 mt-4" data-aos="zoom-in">
             <div className="flex flex-col md:flex-row justify-around gap-8">
                 <div className=" flex flex-col gap-4 ">
                     <div className="w-24">

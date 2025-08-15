@@ -5,17 +5,18 @@ import { useNavigate } from 'react-router';
 import { useCart } from '../context/CartContext';
 
 export default function Checkout() {
-
+    // loading state of button
     const [loading, setLoading] = useState(false);
 
-    const {cartItems, clearCart} = useCart();
+    // useCart
+    const { cartItems, clearCart } = useCart();
     const total = cartItems.reduce(
         (sum, item) => sum + item.price * item.quantity, 0
     );
 
-
     const navigate = useNavigate();
 
+    // state to store buyer's details for the checkout form
     const [buyer, setBuyer] = useState({
         name: "",
         email: "",
@@ -23,11 +24,12 @@ export default function Checkout() {
         address: "",
     });
 
-
+    //  Handles form submission: prevents page reload, shows loading state
     const handleCheckout = (e) => {
         e.preventDefault();
         setLoading(true);
 
+        // Handle order details
         const orderDetails = cartItems
             .map(item => `${item.name} (x${item.quantity}) - Gh₵ ${item.price * item.quantity}`)
             .join("\n");
@@ -42,6 +44,10 @@ export default function Checkout() {
         };
 
 
+
+        // Sends order details via EmailJS, shows success/failure notification,
+        // clears cart, resets buyer form, and redirects to shop after 1.5s.
+        // Finally, stops loading state regardless of outcome.
         emailjs
             .send("service_g6lxcat", "template_1ypr89r", templateParams, "5GoqkQ3CwMvxTUoBk")
             .then(() => {
@@ -63,6 +69,7 @@ export default function Checkout() {
 
     return (
         <div className="mt-20 flex flex-col items-center">
+            {/* Form to handle checkout */}
             <form onSubmit={handleCheckout} className="flex flex-col space-y-4">
                 <h1 className="text-lg md:text-3xl font-bold text-center">
                     Fill in your details to place your order (checkout)
@@ -116,6 +123,7 @@ export default function Checkout() {
                     className="w-full border rounded bg-Green hover:bg-green-400 text-white p-2"
                     disabled={loading}
                 >
+                    {/* state of loading */}
                     {loading ? (
                         <div className='animate-pulse'>Sending...</div>) : (
                         "Place Order"

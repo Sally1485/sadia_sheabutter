@@ -95,10 +95,10 @@ export default function ViewProduct() {
                   min="1"
                   onChange={handleQuantityChange}
                   className="w-20 rounded px-2 py-1 border border-green-700 text-center"
-
                 />
                 <button className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300 focus:outline-none" onClick={handleIncrease}>+</button>
               </div>
+
             </div>
             <div className="flex flex-col gap-4">
               <div>
@@ -108,7 +108,6 @@ export default function ViewProduct() {
                 >
                   Add to Cart
                 </button>
-
               </div>
 
               <div>

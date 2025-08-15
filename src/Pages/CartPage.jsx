@@ -12,7 +12,7 @@ export default function CartPage() {
     0
   );
 
-  // Handle quantity changes safely
+  // Handle quantity changes 
   const handleQuantityChange = (id, newQuantity) => {
     const parsedQuantity = parseInt(newQuantity, 10);
     if (!isNaN(parsedQuantity) && parsedQuantity > 0) {
@@ -39,6 +39,7 @@ export default function CartPage() {
           <div className="flex flex-col gap-4">
             {cartItems.map((item) => (
               <div key={item.id} className="border p-2 rounded shadow-sm flex gap-3">
+                
                 {/* Product Image */}
                 <img
                   src={item.image}

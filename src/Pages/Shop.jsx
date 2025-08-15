@@ -8,6 +8,8 @@ import { ChevronRight } from "lucide-react";
 import { Link } from "react-router";
 import TestImage from '../assets/images/shea.jpg';
 import ProductsData from "../Data/Products";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 
@@ -29,8 +31,9 @@ export default function Shop() {
         <div>
             <Navbar />
             <div className="mt-40 md:mr-12 flex items-center w-[90%] mx-auto  font-light">
-                <Link to={'/'} className="font-light">Home</Link>
+                <Link to={'/'} className="font-light" data-aos="fade-down">Home</Link>
                 <div><ChevronRight /></div>
+                {/* selecting category */}
                 <div className="font-light">{selectCategory}</div>
 
             </div>
@@ -38,9 +41,9 @@ export default function Shop() {
                 <Sidebar onCategoryChange={HandleCategorychange} />
                 <section className="md:mt-10  flex-1  rounded-lg ">
                     <div className="">
-                        <h1 className="text-2xl md:text-4xl font-medium ">{selectCategory}</h1>
+                        <h1 className="text-2xl md:text-4xl font-medium " data-aos="zoom-in">{selectCategory}</h1>
                         <div className="flex flex-col md:flex-row justify-between gap-6  m-4 pt-4 md:pt-6">
-                            <div>
+                            <div >
                                 <h1>{FilteredProducts.length} products </h1>
                             </div>
 
@@ -56,14 +59,12 @@ export default function Shop() {
                                     <option value="4">Price(high to low)</option>
                                     <option value="5">Name A-Z</option>
                                     <option value="6">Name Z-A</option>
-
                                 </select>
                             </div>
                         </div>
 
                         {/* select Category */}
-
-                        <div className="grid  md:grid-cols-4 pt-8">
+                        <div className="grid  md:grid-cols-4 pt-8" data-aos="fade-right">
                             {FilteredProducts.map(product => {
                                 return (
                                     <SalesCard key={product.id} id={product.id} salesImage={product.image} name={product.name} category={product.category} price={product.price} />
@@ -73,6 +74,7 @@ export default function Shop() {
                     </div>
                 </section>
             </div>
+
             <Footer />
         </div>
     )

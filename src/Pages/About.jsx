@@ -9,6 +9,8 @@ import AboutBg1 from '../assets/images/img11.jpg';
 import AboutBg2 from '../assets/images/img12.jpg'
 import { useEffect, useState } from 'react';
 import '@fontsource/poppins';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 
@@ -18,15 +20,16 @@ export default function About() {
     AboutBg2
   ];
 
+  // State to track the current index
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+      Aos.init({ duration: 1000, once: true });
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
-
 
 
   return (
@@ -38,12 +41,12 @@ export default function About() {
         }}>
         <div className='bg-black inset-0 opacity-60 absolute'></div>
         <div className="pt-54 md:pt-72 w-full  flex flex-col  items-center justify-center ">
-          <h1 className=" text-3xl md:text-8xl text-white font-bold text-center relative z-10 ">About Us</h1>
+          <h1 className=" text-3xl md:text-8xl text-white font-bold text-center relative z-10 "data-aos="fade-right">About Us</h1>
         </div>
       </div>
 
       <section className='mt-12 not-even:'>
-        <h2 className="text-2xl md:text-3xl font-bold text-amber-900 text-center">Our Story</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-amber-900 text-center" data-aos="fade-down">Our Story</h2>
         <div className="flex flex-col md:flex-row w-[90%] mx-auto gap-10 mt-14">
           {/* Image Section */}
           <div className="md:w-1/2 flex justify-center items-center">
@@ -51,12 +54,13 @@ export default function About() {
               src={AboutImage}
               alt="About Khalimatu Sadia Enterprise"
               className="w-full h-auto rounded-xl shadow-md object-cover hover:scale-105 transition"
+              data-aos="fade-right"
             />
           </div>
 
           {/* Text Section */}
           <div className="md:w-1/2 flex items-start">
-            <div className="text-center md:text-left leading-relaxed space-y-4">
+            <div className="text-center md:text-left leading-relaxed space-y-4" data-aos="zoom-in">
 
               <p>
                 Khalimatu Sadia Enterprise was founded on resilience, tradition, and a deep passion for transformation.
@@ -80,12 +84,14 @@ export default function About() {
 
         <div className=' flex md:flex-row  mt-20 '>
           <div className="flex flex-col md:flex-row justify-between items-center md:gap-16 w-[90%] pt-12 mx-auto">
+
             {/* Text Section */}
             <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-2xl md:text-4xl font-extrabold text-amber-900 mb-4">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-amber-900 mb-4" data-aos="fade-left">
                 The Woman Behind the Vision
               </h2>
-              <p className="leading-relaxed">
+             <div data-aos="zoom-in">
+               <p className="leading-relaxed" >
                 Mrs. Sadia Alidu, the visionary founder of Khalimatu Sadia Enterprise, is a trained teacher and a graduate of
                 Integrated Business Studies from the University for Development Studies. She is also a proud member of the
                 Federation of People with Disabilities in Ghana.
@@ -105,6 +111,7 @@ export default function About() {
                 Today, she leads a growing enterprise that not only delivers high-quality natural products but also
                 uplifts marginalized voices, celebrates tradition, and transforms lives—one jar of shea butter at a time.
               </p>
+             </div>
             </div>
 
             {/* Image Section */}
@@ -113,40 +120,39 @@ export default function About() {
                 src={About2image}
                 alt="Founder Sadia Alidu"
                 className="w-full max-w-md rounded-xl shadow-lg object-cover hover:scale-105 transition"
+                data-aos="fade-right"
               />
             </div>
           </div>
-
         </div>
         <div className=' pt-8  md:h-[70vh]'>
 
-
+          {/* Our Mission and Vision section */}
           <h2 className='text-2xl font-bold text-white text-center'>Our Mission & Vision </h2>
           <p className='text-lg  text-white text-center'>Guiding principles that shape our commitment to quality, sustainability and community empowerment</p>
           <div className=' flex flex-col  md:flex-row items-center gap-6 w-[80%] mx-auto pt-8'>
-            <div className='md:w-1/2 bg-Green text-white shadow-lg p-3 hover:scale-105 transition'>
+            <div className='md:w-1/2 bg-Green text-white shadow-lg p-3 hover:scale-105 transition' data-aos="zoom-out-left">
               <div className='flex flex-row justify-center items-center gap-2'>
                 <div><Lightbulb className='size-10 text-white' /></div>
                 <h2 className='text-2xl font-bold text-center p-2 '>Our Vision</h2>
               </div>
-              <p className=' text-center leading-relaxed p-2'>Our vision is to become a leading force in value addition within the agricultural and manufacturing sectors. We aim to drive innovation through sustainable and efficient practices. Our commitment to quality ensures products that meet both local and international standards. Through our work, we strive to make a meaningful impact across the entire value chain.</p>
+              <p className=' text-center leading-relaxed p-2' >Our vision is to become a leading force in value addition within the agricultural and manufacturing sectors. We aim to drive innovation through sustainable and efficient practices. Our commitment to quality ensures products that meet both local and international standards. Through our work, we strive to make a meaningful impact across the entire value chain.</p>
             </div>
-            <div className='md:w-1/2 shadow-lg bg-Green text-white p-2.5 hover:scale-105 transition'>
+            <div className='md:w-1/2 shadow-lg bg-Green text-white p-2.5 hover:scale-105 transition'data-aos="zoom-out-right"> 
               <div className='flex flex-row justify-center items-center gap-2 '>
                 <div><Goal className='size-10 text-white' /></div>
                 <h2 className='text-2xl font-bold  text-center p-2 '>Our Mission</h2>
               </div>
               <p className=' text-center leading-relaxed p-2'>Our mission is to contribute meaningfully to national economic development. We aim to create sustainable employment opportunities within agriculture, agro-processing, and manufacturing. A key focus of our efforts is to empower women and persons with disabilities (PWDs). We believe in inclusive practices that foster equal opportunity and long-term impact.</p>
             </div>
-
           </div>
-
         </div>
+
       </section>
       <section className=' p-8'>
-        <h2 className='text-lg font-bold text-center p-2'>Experience Pure Shea Today</h2>
+        <h2 className='text-lg font-bold text-center p-2' data-aos="fade-right">Experience Pure Shea Today</h2>
         <p className='text-center p-2'>Join thousands of statisfied customers who have discoveres the benefits of our premium shea butter products.</p>
-        <div className=' flex justify-center items-center p-2'>
+        <div className=' flex justify-center items-center p-2' data-aos="zoom-in">
           <Link to={'/shop'}><SubmitButton title={"Shop Products"} /></Link>
         </div>
       </section>
