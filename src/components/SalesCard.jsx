@@ -14,7 +14,7 @@ export default function SalesCard({ id, salesImage, name, price, category }) {
       <div className='flex gap-4 flex-col ml-4  justify-between md:p-4'>
         <h2 className='text-lg  '>{name}</h2>
         <p className="text-sm text-gray-500">{category}</p>
-        <p className='font-light '>{price}</p>
+        <p className='font-light '>Gh₵ {price}.00</p>
       </div>
       <div className='flex md:justify-center  pb-4'>
         <Link to={`/view-product/${id}`}><SubmitButton title={"View Product"} /></Link>

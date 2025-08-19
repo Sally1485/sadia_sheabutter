@@ -22,9 +22,9 @@ export default function Contact() {
                         <div className="flex flex-col md:flex-row items-start pt-8 justify-between gap-10 md:gap-20">
                             <span className="flex flex-col justify-between gap-4">
                                 <h2 className="text-lg md:text-3xl font-bold">Our Hours</h2>
-                                <h3>Mon-Fri: 8am-8pm</h3>
-                                <h3>Saturday: 9am-8pm</h3>
-                                <h3>Sunday: 9am-7pm</h3>
+                                <h3>Mon-Fri: 8am-5pm</h3>
+                                <h3>Saturday: 8am-4pm</h3>
+                              
                                 <h3>All times are Central Standard Time Zones</h3>
                             </span>
                             <span>

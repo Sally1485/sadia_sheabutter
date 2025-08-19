@@ -41,7 +41,7 @@ export default function Navbar() {
                     <div data-aos="fade-left">
                         <Link onClick={() => setIsOpen(!isOpen)} className="hover:text-amber-300">
                             {totalItems > 0 && (
-                                <span className="absolute top-7 right-21 bg-[#9C88FF] text-white rounded-full px-2 text-sm">
+                                <span className="absolute -top-1 right-4 bg-[#9C88FF] text-white rounded-full px-2 text-sm">
                                     {totalItems}
                                 </span>
                             )}
