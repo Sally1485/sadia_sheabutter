@@ -8,8 +8,8 @@ import '@fontsource/poppins';
 export default function SalesCard({ id, salesImage, name, price, category }) {
   return (
     <div className='flex flex-col  md:w-[250px]   md:h-auto overflow-hidden p-4 '>
-      <div>
-        <img src={salesImage} alt="product image" className='w-full  rounded' width='471' height='500' />
+      <div className='w-full h-[250px] overflow-hidden object-cover'>
+        <img src={salesImage} alt="product image" className='w-full h-[250px] rounded' />
       </div>
       <div className='flex gap-4 flex-col ml-4  justify-between md:p-4'>
         <h2 className='text-lg  '>{name}</h2>

@@ -64,7 +64,7 @@ export default function Shop() {
                         </div>
 
                         {/* select Category */}
-                        <div className="grid  md:grid-cols-4 pt-8" data-aos="fade-right">
+                        <div className="grid  md:grid-cols-4 pt-8 object-cover" data-aos="fade-right">
                             {FilteredProducts.map(product => {
                                 return (
                                     <SalesCard key={product.id} id={product.id} salesImage={product.image} name={product.name} category={product.category} price={product.price} />
