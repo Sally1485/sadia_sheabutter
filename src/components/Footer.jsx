@@ -1,25 +1,24 @@
 import { FacebookIcon, InstagramIcon, Twitter } from "lucide-react";
 import LogoImage from '../assets/images/logo2.png';
-import Aos from "aos";
-import "aos/dist/aos.css";
+
 
 
 
 
 export default function Footer() {
     return (
-        <div className="bg-milk  p-10 mt-4" data-aos="zoom-in">
+        <div className="bg-milk  p-10 mt-4" >
             <div className="flex flex-col md:flex-row justify-around gap-8">
                 <div className=" flex flex-col gap-4 ">
                     <div className="w-24">
-                        <img src={LogoImage} alt="" className="w-full h-auto object-cover rounded-full" />
+                        <img src={LogoImage} alt="company's logo" className="w-full h-auto object-cover rounded-full" />
                     </div>
                     <div className="max-w-sm">
                         <p>Naturally crafted in Northern Ghana, our shea butter products nourish and protect skin and hair with rich, organic goodness.
                         </p>
                     </div>
                     <div className="flex items-center gap-2 ">
-                        <a href="#"><span><FacebookIcon /></span></a>
+                        <a href="https://www.facebook.com/share/xFG2dEn3co8xofhg/?mibextid=qi2Omg" target="blank"><span><FacebookIcon /></span></a>
                         <a href="#"> <span><InstagramIcon /></span></a>
                         <a href="#"><span><Twitter /></span></a>
                     </div>

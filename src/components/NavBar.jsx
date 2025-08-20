@@ -23,13 +23,13 @@ export default function Navbar() {
             <nav className=" fixed top-0 left-0 right-0 z-50 bg-Green text-white shadow-md flex items-center justify-between px-4 md:px-10 py-2">
 
                 <div className="flex items-center" ><Link to={'/'}>
-                    <img src={LogoImage} alt="" className="w-20 h-20 object-cover bg-white rounded-full" data-aos="fade-right" />
+                    <img src={LogoImage} alt="company's logo" className="w-20 h-20 object-cover bg-white rounded-full"/>
                 </Link>
                 </div>
 
                 <div className="flex space-x-8 font-medium uppercase">
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8 font-medium uppercase" data-aos="fade-left">
+                    <div className="hidden md:flex items-center space-x-8 font-medium uppercase" >
                         <Link to={'/'} className="hover:text-amber-300">Home</Link>
                         <Link to={'/shop'} className="hover:text-amber-300">Shop</Link>
                         <Link to={'/about'} className="hover:text-amber-300">Our Story</Link>

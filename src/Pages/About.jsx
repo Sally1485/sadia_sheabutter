@@ -24,7 +24,7 @@ export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-      Aos.init({ duration: 1000, once: true });
+    Aos.init({ duration: 1000, once: true });
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 2000);
@@ -41,7 +41,7 @@ export default function About() {
         }}>
         <div className='bg-black inset-0 opacity-60 absolute'></div>
         <div className="pt-54 md:pt-72 w-full  flex flex-col  items-center justify-center ">
-          <h1 className=" text-3xl md:text-8xl text-white font-bold text-center relative z-10 "data-aos="fade-right">About Us</h1>
+          <h1 className=" text-3xl md:text-8xl text-white font-bold text-center relative z-10 " data-aos="fade-right">About Us</h1>
         </div>
       </div>
 
@@ -90,28 +90,28 @@ export default function About() {
               <h2 className="text-2xl md:text-4xl font-extrabold text-amber-900 mb-4" data-aos="fade-left">
                 The Woman Behind the Vision
               </h2>
-             <div data-aos="zoom-in">
-               <p className="leading-relaxed" >
-                Mrs. Sadia Alidu, the visionary founder of Khalimatu Sadia Enterprise, is a trained teacher and a graduate of
-                Integrated Business Studies from the University for Development Studies. She is also a proud member of the
-                Federation of People with Disabilities in Ghana.
-              </p>
-              <p className="mt-4 leading-relaxed ">
-                Despite living with a visible physical disability, Mrs. Sadia’s resilience and determination have shaped a
-                powerful story of empowerment—one rooted in the legacy of her grandmother, a fellow woman with a disability
-                who thrived in agro-processing.
-              </p>
-              <p className="mt-4 leading-relaxed ">
-                As a child, Sadia learned the traditional craft of turning shea nuts into butter, cotton into thread,
-                and palm nuts into oil alongside her grandmother. This early foundation, combined with formal training from
-                organizations like USAID, Ashiba Company Limited, and Leventis Cooperative Society, strengthened her drive
-                to create change.
-              </p>
-              <p className="mt-4 leading-relaxed ">
-                Today, she leads a growing enterprise that not only delivers high-quality natural products but also
-                uplifts marginalized voices, celebrates tradition, and transforms lives—one jar of shea butter at a time.
-              </p>
-             </div>
+              <div data-aos="zoom-in">
+                <p className="leading-relaxed" >
+                  Mrs. Sadia Alidu, the visionary founder of Khalimatu Sadia Enterprise, is a trained teacher and a graduate of
+                  Integrated Business Studies from the University for Development Studies. She is also a proud member of the
+                  Federation of People with Disabilities in Ghana.
+                </p>
+                <p className="mt-4 leading-relaxed ">
+                  Despite living with a visible physical disability, Mrs. Sadia’s resilience and determination have shaped a
+                  powerful story of empowerment—one rooted in the legacy of her grandmother, a fellow woman with a disability
+                  who thrived in agro-processing.
+                </p>
+                <p className="mt-4 leading-relaxed ">
+                  As a child, Sadia learned the traditional craft of turning shea nuts into butter, cotton into thread,
+                  and palm nuts into oil alongside her grandmother. This early foundation, combined with formal training from
+                  organizations like USAID, Ashiba Company Limited, and Leventis Cooperative Society, strengthened her drive
+                  to create change.
+                </p>
+                <p className="mt-4 leading-relaxed ">
+                  Today, she leads a growing enterprise that not only delivers high-quality natural products but also
+                  uplifts marginalized voices, celebrates tradition, and transforms lives—one jar of shea butter at a time.
+                </p>
+              </div>
             </div>
 
             {/* Image Section */}
@@ -138,7 +138,7 @@ export default function About() {
               </div>
               <p className=' text-center leading-relaxed p-2' >Our vision is to become a leading force in value addition within the agricultural and manufacturing sectors. We aim to drive innovation through sustainable and efficient practices. Our commitment to quality ensures products that meet both local and international standards. Through our work, we strive to make a meaningful impact across the entire value chain.</p>
             </div>
-            <div className='md:w-1/2 shadow-lg bg-Green text-white p-2.5 hover:scale-105 transition'data-aos="zoom-out-right"> 
+            <div className='md:w-1/2 shadow-lg bg-Green text-white p-2.5 hover:scale-105 transition' data-aos="zoom-out-right">
               <div className='flex flex-row justify-center items-center gap-2 '>
                 <div><Goal className='size-10 text-white' /></div>
                 <h2 className='text-2xl font-bold  text-center p-2 '>Our Mission</h2>

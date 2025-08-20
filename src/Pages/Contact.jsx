@@ -5,6 +5,7 @@ import SubmitButton from "../components/SubmitButton";
 import '@fontsource/poppins';
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Phone } from "lucide-react";
 
 
 export default function Contact() {
@@ -15,7 +16,7 @@ export default function Contact() {
                 <div className="flex flex-col md:flex-row w-[80%] mx-auto mt-30 justify-between gap-20">
                     <div className="md:w-2/5">
                         {/* contact image */}
-                        <img src={Contact1Image} alt="" className="w-full h-auto object-cover" data-aos="fade-left" />
+                        <img src={Contact1Image} alt="image of location" className="w-full h-auto object-cover" data-aos="fade-left" />
                     </div>
                     <div className="md:w-3/5 flex flex-col  justify-center " data-aos="fade-right">
                         <h1 className="text-4xl md:text-6xl text-brown font-bold">Contact Us</h1>
@@ -24,16 +25,22 @@ export default function Contact() {
                                 <h2 className="text-lg md:text-3xl font-bold">Our Hours</h2>
                                 <h3>Mon-Fri: 8am-5pm</h3>
                                 <h3>Saturday: 8am-4pm</h3>
-                              
+
                                 <h3>All times are Central Standard Time Zones</h3>
                             </span>
                             <span>
                                 <h2 className="text-lg md:text-3xl font-bold">Our Location</h2>
-                                <p className="md:max-w-md pt-4 md:leading-relaxed ">Based in the heart of Kansas City, Pure Shea Store is proud to call this vibrant and diverse community home. You can find us at:
-                                    201 N Forest Ave.
-                                    Suite 225 Independence, MO 64050</p>
+                                <p className="md:max-w-md pt-4 md:leading-relaxed ">Based in the heart of Tamale, Khalimatu Sadia Enterprise is proud to call this vibrant and diverse community home. You can find us at:
+                                    Sagnarigu  Municipality, Tamale.
+                                    <br />  <div className="mt-1 text-lg">Digital Address: <strong>NS_003-2290</strong></div></p>
                             </span>
+
                         </div>
+                        <span className=" mt-4 font-bold">
+                            <div> <Phone size={20} /></div>
+                            (+233) 200612841 <br />
+                            (+233) 207365678
+                        </span>
                     </div>
                 </div>
             </section>

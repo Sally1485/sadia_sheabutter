@@ -39,7 +39,7 @@ export default function CartPage() {
           <div className="flex flex-col gap-4">
             {cartItems.map((item) => (
               <div key={item.id} className="border p-2 rounded shadow-sm flex gap-3">
-                
+
                 {/* Product Image */}
                 <img
                   src={item.image}

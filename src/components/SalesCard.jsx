@@ -12,8 +12,8 @@ export default function SalesCard({ id, salesImage, name, price, category }) {
         <img src={salesImage} alt="product image" className='w-full h-[250px] rounded' />
       </div>
       <div className='flex gap-4 flex-col ml-4  justify-between md:p-4'>
-        <h2 className='text-lg  '>{name}</h2>
         <p className="text-sm text-gray-500">{category}</p>
+        <h2 className='text-lg  '>{name}</h2>
         <p className='font-light '>Gh₵ {price}.00</p>
       </div>
       <div className='flex md:justify-center  pb-4'>
