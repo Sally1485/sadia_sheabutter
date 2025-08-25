@@ -2,10 +2,10 @@ import Footer from "../components/Footer";
 import Navbar from "../components/NavBar";
 import Sidebar from "../components/Sidebar";
 import SalesCard from "../components/SalesCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '@fontsource/poppins';
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useParams, useLocation } from "react-router";
 import TestImage from '../assets/images/shea.jpg';
 import ProductsData from "../Data/Products";
 import Aos from "aos";
@@ -15,7 +15,25 @@ import "aos/dist/aos.css";
 
 
 export default function Shop() {
-    const [selectCategory, SetSelectCategory] = useState('All Products');
+
+    const location = useLocation();
+
+    const queryParams = new URLSearchParams(location.search);
+
+    const initialCategory = queryParams.get("category") || "All Products";
+
+    const [selectCategory, SetSelectCategory] = useState(initialCategory);
+
+
+
+    const { category } = useParams();
+
+    const categoryMap = {
+        soap: "Soap Products",
+        skin: "Skin Products",
+        hair: "Hair Products"
+    };
+
 
     // Handle Category change
     const HandleCategorychange = (category) => {
@@ -24,6 +42,12 @@ export default function Shop() {
 
     // Filter products
     const FilteredProducts = selectCategory === 'All Products' ? ProductsData : ProductsData.filter(product => product.category === selectCategory);
+
+    // Re-run when URL query changes (e.g., clicking another button from Home)
+    useEffect(() => {
+        SetSelectCategory(initialCategory);
+    }, [initialCategory]);
+
 
 
 

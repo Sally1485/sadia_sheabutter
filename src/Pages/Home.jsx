@@ -9,8 +9,7 @@ import BgImage4 from '../assets/images/bg-4.jpg';
 import BgImage6 from '../assets/images/hair.jpg';
 import BgImage7 from '../assets/images/skin1.jpg';
 import BgImage8 from '../assets/images/soap.jpg';
-import { Link } from "react-router";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 // import './index.css'
 import SubmitButton from "../components/SubmitButton";
 // Supports weights 200-900
@@ -22,7 +21,7 @@ import "aos/dist/aos.css";
 
 
 
-export default function Home({ onCategoryChange }) {
+export default function Home() {
   // Images on the hero section
   const images = [
     BgImage1,
@@ -37,11 +36,6 @@ export default function Home({ onCategoryChange }) {
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category");
 
-  // useEffect(() => {
-  //   if (category) {
-  //     onCategoryChange(category);
-  //   }
-  // }, [category]);
 
 
   useEffect(() => {
@@ -104,9 +98,9 @@ export default function Home({ onCategoryChange }) {
             </p>
             <div className="md:mt-8" data-aos="fade-right">
               {/* Responsivenss button for Medium screens */}
-              {/* <Link to="/shop" onClick={() => onCategoryChange('Soap Products')}>
+              <Link to={`/shop?category=${encodeURIComponent('Soap Products')}`}>
                 <FilterrButton title="Shop Soap Products" className={'hidden md:flex'} />
-              </Link> */}
+              </Link>
             </div>
           </div>
 
@@ -116,9 +110,9 @@ export default function Home({ onCategoryChange }) {
           </div>
           <div className="md:mt-8" data-aos="fade-right">
             {/* Responsiveness button for small screens */}
-            {/* <Link to={`/shop?category=${encodeURIComponent('Soap Products')}`}>
-              <FilterrButton title="Shop Soap Products" className={'md:hidden ml-22 mt-8 '} />
-            </Link> */}
+            <Link to={`/shop?category=${encodeURIComponent('Soap Products')}`}>
+              <FilterrButton title="Shop Soap Products" className={'md:hidden ml-2 mt-8 '} />
+            </Link>
           </div>
         </div>
 
@@ -139,16 +133,16 @@ export default function Home({ onCategoryChange }) {
             </p>
 
             <div className="md:mt-8" data-aos="fade-right">
-              {/* <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}> */}
+              <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
                 {/* Responsiveness button for medium screens */}
-                {/* <FilterrButton title="Shop Skin Products" className={'hidden md:flex'} /> */}
-              {/* </Link> */}
+                <FilterrButton title="Shop Skin Products" className={'hidden md:flex'} />
+              </Link>
             </div>
             <div className="md:mt-8" data-aos="fade-right" >
-              {/* Responsiveness button for small screens */}
-              {/* <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
-                <FilterrButton title="Shop Skin Products" className={'md:hidden ml-22 mt-8'} />
-              </Link> */}
+              Responsiveness button for small screens
+              <Link to={`/shop?category=${encodeURIComponent('Skin Products')}`}>
+                <FilterrButton title="Shop Skin Products" className={'md:hidden ml-2 mt-8'} />
+              </Link>
             </div>
           </div>
         </div>
@@ -166,9 +160,9 @@ export default function Home({ onCategoryChange }) {
 
             <div className="md:mt-8" data-aos="fade-right">
               {/* Responsiveness button for medium screens */}
-              {/* <Link to={`/shop?category=${encodeURIComponent('Hair Products')}`}>
+              <Link to={`/shop?category=${encodeURIComponent('Hair Products')}`}>
                 <FilterrButton title="Shop Hair Products" className={'hidden md:flex'} />
-              </Link> */}
+              </Link>
             </div>
           </div>
 
@@ -178,9 +172,9 @@ export default function Home({ onCategoryChange }) {
           </div>
 
           <div className="md:mt-8" data-aos="fade-right">
-            {/* <Link to={`/shop?category=${encodeURIComponent('Hair Products')}`}>
-              <FilterrButton title="Shop Hair Products" className={'md:hidden ml-22 mt-6'} />
-            </Link> */}
+            <Link to={`/shop?category=${encodeURIComponent('Hair Products')}`}>
+              <FilterrButton title="Shop Hair Products" className={'md:hidden ml-2 mt-6'} />
+            </Link>
           </div>
         </div>
       </section>

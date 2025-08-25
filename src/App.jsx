@@ -48,7 +48,8 @@ function App() {
     { path: '/about', element: <About /> },
     { path: '*', element: <Notfound /> },
     { path: '/view-product/:id', element: <ViewProduct handleAddToCart={handleAddToCart} /> },
-    { path: '/shop', element: <Shop /> },
+    { path: '/shop/', element: <Shop /> },
+    { path: '/shop/:category', element: <Shop /> },
     { path: '/contact', element: <Contact /> },
     { path: '/cart-page', element: <CartPage cartItems={cartItems} updateQuantity={updateQuantity} removeItem={removeItem} /> },
     { path: '/check-out', element: <Checkout /> }

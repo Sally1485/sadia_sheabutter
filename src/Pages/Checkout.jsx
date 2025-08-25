@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
 import { useCart } from '../context/CartContext';
+import { ChevronLeft } from 'lucide-react';
+import { Link } from 'react-router';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 export default function Checkout() {
     // loading state of button
@@ -23,6 +26,7 @@ export default function Checkout() {
         phone: "",
         address: "",
     });
+
 
     //  Handles form submission: prevents page reload, shows loading state
     const handleCheckout = (e) => {
@@ -67,70 +71,81 @@ export default function Checkout() {
 
     };
 
+
+
     return (
-        <div className="mt-20 flex flex-col items-center">
-            {/* Form to handle checkout */}
-            <form onSubmit={handleCheckout} className="flex flex-col space-y-4">
-                <h1 className="text-lg md:text-3xl font-bold text-center">
-                    Fill in your details to place your order (checkout)
-                </h1>
+        <div className=" mt-5 flex flex-col  ">
+            <div className='flex mt-8 ml-20'>
+                <ChevronLeft />
+                <Link to={'/shop'}><h1 className='font-bold text-xl'>Back</h1></Link>
+            </div>
+            <div className='mt-14 flex flex-col items-center'>
+                {/* Form to handle checkout */}
+                <form onSubmit={handleCheckout} className="flex flex-col space-y-4">
+                    <h1 className="text-lg md:text-3xl font-bold text-center">
+                        Fill in your details to place your order (checkout)
+                    </h1>
 
-                <input
-                    type="text"
-                    name="user_name"
-                    id="name"
-                    value={buyer.name}
-                    onChange={(e) => setBuyer({ ...buyer, name: e.target.value })}
-                    required
-                    placeholder="Full Name"
-                    className="w-full border rounded p-2"
-                />
+                    <input
+                        type="text"
+                        name="user_name"
+                        id="name"
+                        value={buyer.name}
+                        onChange={(e) => setBuyer({ ...buyer, name: e.target.value })}
+                        required
+                        placeholder="Full Name"
+                        className="w-full border rounded p-2"
+                    />
 
-                <input
-                    type="email"
-                    name="user_email"
-                    value={buyer.email}
-                    onChange={(e) => setBuyer({ ...buyer, email: e.target.value })}
-                    id="email"
-                    placeholder="Email"
-                    required
-                    className="w-full border rounded p-2"
-                />
+                    <input
+                        type="email"
+                        name="user_email"
+                        value={buyer.email}
+                        onChange={(e) => setBuyer({ ...buyer, email: e.target.value })}
+                        id="email"
+                        placeholder="Email"
+                        required
+                        className="w-full border rounded p-2"
+                    />
 
-                <input
-                    type='tel'
-                    name="number"
-                    id="number"
-                    value={buyer.phone}
-                    onChange={(e) => setBuyer({ ...buyer, phone: e.target.value })}
-                    required
-                    placeholder="Phone Number"
-                    className="w-full border rounded p-2"
-                />
+                    <input
+                        type='tel'
+                        name="number"
+                        id="number"
+                        value={buyer.phone}
+                        onChange={(e) => setBuyer({ ...buyer, phone: e.target.value })}
+                        required
+                        placeholder="Phone Number"
+                        className="w-full border rounded p-2"
+                    />
 
-                <textarea
-                    name="message"
-                    id="address"
-                    value={buyer.address}
-                    onChange={(e) => setBuyer({ ...buyer, address: e.target.value })}
-                    required
-                    placeholder="Address"
-                    className="w-full border h-30 p-2 rounded"
-                ></textarea>
+                    <textarea
+                        name="message"
+                        id="address"
+                        value={buyer.address}
+                        onChange={(e) => setBuyer({ ...buyer, address: e.target.value })}
+                        required
+                        placeholder="Address"
+                        className="w-full border h-30 p-2 rounded"
+                    ></textarea>
 
-                <button
-                    type="submit"
-                    className="w-full border rounded bg-Green hover:bg-green-400 text-white p-2"
-                    disabled={loading}
-                >
-                    {/* state of loading */}
-                    {loading ? (
-                        <div className='animate-pulse'>Sending...</div>) : (
-                        "Place Order"
-                    )}
+                    <div>
+                        <Toaster position="top-center" reverseOrder={false} toastOptions={{ className: 'text-2xl', success: { border: '1px solid #713200', padding: '16px', color: '#713200', background: 'green' } }} />
+                        <button
+                            type="submit"
+                            className="w-full border rounded bg-Green hover:bg-green-400 text-white p-2"
+                            disabled={loading}
+                        >
+                            {/* state of loading */}
+                            {loading ? (
+                                <div className='animate-pulse'>Sending...</div>) : (
+                                "Place Order"
+                            )}
 
-                </button>
-            </form>
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

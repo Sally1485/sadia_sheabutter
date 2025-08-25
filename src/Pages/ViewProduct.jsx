@@ -7,7 +7,7 @@ import { useCart, } from "../context/CartContext";
 import '@fontsource/poppins';
 import { Link, useParams } from "react-router";
 import ProductsData from "../Data/Products";
-
+import toast, { Toaster } from "react-hot-toast";
 
 
 
@@ -34,6 +34,8 @@ export default function ViewProduct() {
     const value = Math.max(1, parseInt(e.target.value || 1))
     setQuantity(value)
   };
+
+  const notify = () => toast('Cart added successfully!')
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -102,8 +104,9 @@ export default function ViewProduct() {
             </div>
             <div className="flex flex-col gap-4">
               <div>
+                <Toaster position="top-center" reverseOrder={false} toastOptions={{ className: 'text-2xl', success: { border: '1px solid #713200', padding: '16px', color: '#713200', background: 'green' } }} />
                 <button
-                  onClick={() => addToCart(product, quantity)}
+                  onClick={() => (notify(), addToCart(product, quantity))}
                   className="w-full px-6 py-2 border border-green-700 hover:bg-green-700 text-green-700 hover:text-white transition duration-300"
                 >
                   Add to Cart
